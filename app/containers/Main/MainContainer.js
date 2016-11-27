@@ -1,10 +1,10 @@
 import React from 'react'
-import { Main } from 'components'
+import { Main, Navigation } from 'components'
 
 const MainContainer = React.createClass({
   render() {
     return (
-      <Main />
+      <Main />      
     )
   }
 })

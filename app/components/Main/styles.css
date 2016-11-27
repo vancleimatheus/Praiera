@@ -1,3 +1,19 @@
-.container {
-  composes: centeredContainer from 'sharedStyles/styles.css';
+.marginTop20px {
+  margin-top: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+.paddingL18 {
+  padding-left: 18px;
+}
+
+.paddingR5 {
+  padding-right: 5px;
+}
+
+.paddingL0 {
+  padding-left: 0px;
 }

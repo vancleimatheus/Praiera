@@ -45,17 +45,15 @@
             </form>
         </div>
     </div>
-    <modal title="Clone office size" visible="showCart" style="display: none">
-        <div class="row">
-            <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer1" ng-click="toggleModalCart()"  style="cursor: pointer">
-                <img src="img/bt_carrinho.png" class="img img-responsive footer-img">
-                <p class="footer-text">valor total <br> <strong class="footer-price">{{model.currentTotal | currency:"R$":2}}</strong></p>
-            </div>
-            <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2">
-                <p class="footer-text1"><strong>FINALIZAR</strong><br> <span class="footer-price">PEDIDO!</span></p>
-                <img src="img/bt_next.png" class="img img-responsive footer-img1">
-            </div>
+    <div class="row">
+        <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer1" uib-popover-template="'/app/popover/Cart.html'" popover-is-open="popoverIsOpen" ng-click="popoverIsOpen = !popoverIsOpen" style="cursor: pointer">
+            <img src="img/bt_carrinho.png" class="img img-responsive footer-img">
+            <p class="footer-text">valor total <br> <strong class="footer-price">{{model.currentTotal | currency:"R$":2}}</strong></p>
         </div>
-    </modal>
+        <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2">
+            <p class="footer-text1"><strong>FINALIZAR</strong><br> <span class="footer-price">PEDIDO!</span></p>
+            <img src="img/bt_next.png" class="img img-responsive footer-img1">
+        </div>
+    </div>    
 </div>
 

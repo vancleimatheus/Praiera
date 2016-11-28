@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0030)http://itcrystals.com/praiera/ -->
+<html lang="en" ng-app="Praiera">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Praiêra Delivery</title>
+    <!-- Bootstrap -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link href="styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid" ng-controller="IndexController">
+		<div class="wraper">
+            <div class="header row">
+                <div class="col-md-2 col-xs-2 col-lg-2 col-xl-2" style="margin-top: 20px;">
+                    <a href="#menu" id="toggle"><span></span></a>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-7 col-xs-7 col-lg-7 col-xl-7" style="text-align:center">
+                    <img src="img/logo_Praiera_transp.png" class="img img-responsive">
+                </div>
+                <div class="col-md-3 col-xs-3 col-lg-3 col-xl-3 radio-btn">
+                    <img src="img/radio.png" class="img img-responsive">
+                    <p class="radio-text">ESTAMOS ENTREGANDO</p>
+                </div>
+            </div>
+            <div ng-view="">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular-sanitize.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular-route.min.js"></script>
+<script src="js/ui-bootstrap-tpls-2.3.0.min.js"></script>
+<script src="app/app.js?v=2"></script>
+<script src="app/controllers/IndexController.js?v=2"></script>
+<script src="app/controllers/FirstStepController.js?v=2"></script>
+<script src="app/components/modal.js"></script>
+
+<script>
+     var theToggle = document.getElementById('toggle');
+
+    // based on Todd Motto functions
+    // http://toddmotto.com/labs/reusable-js/
+
+    // hasClass
+    function hasClass(elem, className) {
+	    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+    }
+    // addClass
+    function addClass(elem, className) {
+        if (!hasClass(elem, className)) {
+    	    elem.className += ' ' + className;
+        }
+    }
+    // removeClass
+    function removeClass(elem, className) {
+	    var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+	    if (hasClass(elem, className)) {
+            while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+                newClass = newClass.replace(' ' + className + ' ', ' ');
+            }
+            elem.className = newClass.replace(/^\s+|\s+$/g, '');
+        }
+    }
+    // toggleClass
+    function toggleClass(elem, className) {
+	    var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+        if (hasClass(elem, className)) {
+            while (newClass.indexOf(" " + className + " ") >= 0 ) {
+                newClass = newClass.replace( " " + className + " " , " " );
+            }
+            elem.className = newClass.replace(/^\s+|\s+$/g, '');
+        } else {
+            elem.className += ' ' + className;
+        }
+    }
+
+    theToggle.onclick = function() {
+       toggleClass(this, 'on');
+       return false;
+    }
+</script>

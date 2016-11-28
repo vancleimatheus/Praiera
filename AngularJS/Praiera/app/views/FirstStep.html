@@ -1,0 +1,61 @@
+<div ng-controller="FirstStepController">
+    <div class="row main-background">
+        <div class="col-md-12 first-heading">
+            <h3>Passo 1/3: <strong>O que voce quer beber?</strong></h3>
+        </div>
+    </div>
+    
+    <div class="row main-background" ng-repeat="pair in viewProducts">
+        <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6" ng-repeat="product in pair">
+            <img ng-src="img/{{product.image}}" class="img img-responsive">
+
+            <div class="row first-box-text">
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
+                    <p class="text1">
+                        <strong>{{ product.name }}</strong><br> {{ product.type }} <br> 269ml<br>
+                        <strong class="amount">{{product.price | currency:"R$":2}} </strong>
+                    </p>
+                </div>
+            </div>
+            <div class="row first-neg-btn">
+                <div class="col-md-3 col-xs-3 col-lg-3 col-xl-3" style="padding-left: 18px;">
+                    <button class="btn" ng-click="Decrease(product)">-</button>
+                </div>
+                <div class="col-md-5 col-xs-5 col-lg-5 col-xl-5" style="padding-right:5px">
+                    <p class="btn1"><input type="number" ng-model="product.qty" min="0" /></p>
+                </div>
+                <div class="col-md-3 col-xs-3 col-lg-3 col-xl-3" style="padding-left:0px">
+                    <button class="btn" ng-click="Increase(product)">+</button>
+                </div>
+            </div>
+
+        </div>        
+    </div>
+
+    <div class="row main-background">
+        <div class="col-md-12 produt">
+            <p class="product-btn">Ver mais produtos</p>
+        </div>
+    </div>
+    <div class="row main-background">
+        <div class="col-md-12 produt1">
+            <form class="form">
+                <input type="checkbox" ng-model="kitPraiera.selected" ng-change="updateCart()"><strong> Levar <span class="btn2">KIT PRAIERA</span> por mais {{kitPraiera.price | currency:"R$":2}}</strong>
+            </form>
+        </div>
+    </div>
+    <modal title="Clone office size" visible="showCart" style="display: none">
+        <div class="row">
+            <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer1" ng-click="toggleModalCart()"  style="cursor: pointer">
+                <img src="img/bt_carrinho.png" class="img img-responsive footer-img">
+                <p class="footer-text">valor total <br> <strong class="footer-price">{{model.currentTotal | currency:"R$":2}}</strong></p>
+            </div>
+            <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2">
+                <p class="footer-text1"><strong>FINALIZAR</strong><br> <span class="footer-price">PEDIDO!</span></p>
+                <img src="img/bt_next.png" class="img img-responsive footer-img1">
+            </div>
+        </div>
+    </modal>
+</div>
+

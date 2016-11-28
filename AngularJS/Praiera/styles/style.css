@@ -22,6 +22,44 @@ a {
   height: 100%;
 }
 
+.pmodal-header {
+    background-color: #d69719;
+    color: white;
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: inherit;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-left: 30px;
+    font-size: 12pt;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pmodal-body {
+    color: #023a41;
+    font-size: 12pt;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 25px;
+    padding-bottom: 10px;
+}
+
+.pmodal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 5px solid #d69719;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%
+}
+
+.justified-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%
+}
+
 .menu-opener, .menu-opener:hover, .menu-opener.active, .menu-opener-inner, .menu-opener-inner::before, .menu-opener-inner::after, .menu, .menu.active {
   -webkit-transition: 250ms all;
   transition: 250ms all;
@@ -213,7 +251,7 @@ a {
   width: 200px;
   padding: 10px;
   margin: auto;
-  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   border-radius: 4px;
   background: white;
@@ -253,7 +291,7 @@ li a:focus {
 
 
 /* demo styles */
-body { margin-top: 3em; background: #eee; color: #555; font-family: "Open Sans", "Segoe UI", Helvetica, Arial, sans-serif; }
+body { margin-top: 3em; background: #eee; color: #555; font-family: 'Roboto', sans-serif; }
 p, p a { font-size: 12px;text-align: center; color: #888; }
 .header
 {
@@ -640,7 +678,7 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 						}
 }
 @media screen and (max-width: 414px) {
-	input[type="text"] {
+	input[type="number"] {
     width: 65px;
 	}
 	.row.first-neg-btn {
@@ -649,8 +687,8 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 
 }
 @media screen and (max-width: 375px) {
-	input[type="text"] {
-    width: 83px;
+	input[type="number"] {
+    width: 65px;
 	}
 	.row.first-neg-btn {
     width: 212px;

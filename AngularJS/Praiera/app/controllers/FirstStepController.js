@@ -1,16 +1,40 @@
 'use strict';
-app.controller('FirstStepController', ['$scope', '$location', '$filter',
-    function ($scope, $location, $filter) {
+app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibModal', '$document',
+    function ($scope, $location, $filter, $uibModal, $document) {
         $scope.model = {
             isOnline: true,
             currentTotal: 0,
-            showCart: false
         };
 
-        $scope.toggleModalCart = function () {
-            $scope.showCart = !$scope.showCart;
-        };
+        var $ctrl = this;
+        $ctrl.animationsEnabled = true;
 
+        $scope.showCart = function () {
+            $ctrl.open('sm');
+        }
+
+        $ctrl.open = function (size, parentSelector) {
+            var modalInstance = $uibModal.open({
+                animation: $ctrl.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/app/popover/Cart.html',
+                controller: 'CartModalController',
+                controllerAs: '$ctrl',
+                size: size,
+                resolve: {
+                    productsCart: function () {
+                        return $scope.productsCart;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $ctrl.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+        };
 
         $scope.kitPraiera = {
             selected: false,
@@ -93,3 +117,9 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter',
         }
     }
 ]);
+
+app.controller('CartModalController', function ($uibModalInstance, productsCart) {
+    var $ctrl = this;
+    $ctrl.productsCart = productsCart;
+    $ctrl.currentTotal = $ctrl.productsCart.reduce((p1, p2) => { return p1 + (p2.qty * p2.price) }, 0.0);
+});

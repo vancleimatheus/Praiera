@@ -81,6 +81,7 @@
     <Content Include="img\logo_Praiera_transp.png" />
     <Content Include="img\radio.png" />
     <Content Include="index.html" />
+    <Content Include="js\jquery-1.11.3.min.js" />
     <Content Include="js\ui-bootstrap-2.3.0.min.js" />
     <Content Include="js\ui-bootstrap-tpls-2.3.0.min.js" />
     <Content Include="packages.config" />

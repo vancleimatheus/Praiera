@@ -1,6 +1,20 @@
-<div style="width: 300px;">
-    <div class="row main-background">Produtos!</div>    
-    <div class="row" ng-repeat="product in productsCart">
-        {{product.name}}
+<div class="pmodal-header">
+    <strong>SEU CARRINHO</strong>
+</div>
+<div class="pmodal-body">
+    <div class="row">
+        &nbsp;
     </div>
+    <div class="row" ng-repeat="product in $ctrl.productsCart">
+        <strong>{{product.name}}</strong><br />
+        <small>{{product.type}} {{product.capacity}}</small><br />
+        <div class="justified-content">
+            <div><small>{{product.qty}} Un X {{product.price | currency:"R$":2}}</small></div>
+            <div><strong>{{product.price * product.qty | currency:"R$":2}}</strong></div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <div>TOTAL</div>
+    <div>{{$ctrl.currentTotal | currency:"R$":2}}</div>
 </div>

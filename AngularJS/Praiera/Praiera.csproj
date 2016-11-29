@@ -67,20 +67,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\components\modal.js" />
     <Content Include="app\controllers\FirstStepController.js" />
     <Content Include="app\controllers\IndexController.js" />
     <Content Include="app\popover\Cart.html" />
     <Content Include="app\views\FirstStep.html" />
+    <Content Include="img\bt_back.png" />
     <Content Include="img\bt_carrinho.png" />
     <Content Include="img\bt_next.png" />
+    <Content Include="img\ico_carrinho.png" />
+    <Content Include="img\ico_kit.png" />
+    <Content Include="img\ico_local.png" />
+    <Content Include="img\ico_pagto.png" />
     <Content Include="img\img_brahmaex_ln.png" />
     <Content Include="img\img_brahma_lt.png" />
     <Content Include="img\img_devassa_ln.png" />
     <Content Include="img\img_itaipava_shot.png" />
+    <Content Include="img\img_kit.png" />
     <Content Include="img\logo_Praiera_transp.png" />
-    <Content Include="img\radio.png" />
+    <Content Include="img\Offline.png" />
+    <Content Include="img\Online.png" />
     <Content Include="index.html" />
+    <Content Include="js\angular-growl.min.css" />
+    <Content Include="js\angular-growl.min.js" />
     <Content Include="js\jquery-1.11.3.min.js" />
     <Content Include="js\ui-bootstrap-2.3.0.min.js" />
     <Content Include="js\ui-bootstrap-tpls-2.3.0.min.js" />
@@ -98,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\components\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

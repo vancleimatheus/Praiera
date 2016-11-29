@@ -23,7 +23,7 @@ a {
 }
 
 .pmodal-header {
-    background-color: #d69719;
+    background-color: #BF7F00;
     color: white;
     text-transform: uppercase;
     padding: 5px;
@@ -47,10 +47,9 @@ a {
     padding: 15px;
     text-align: right;
     border-top: 5px solid #d69719;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 90%
+    padding-left: 30px;
+    color: #734100
 }
 
 .justified-content {

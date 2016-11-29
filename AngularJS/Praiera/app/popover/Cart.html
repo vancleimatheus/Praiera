@@ -1,4 +1,5 @@
 <div class="pmodal-header">
+    <img src="../../img/ico_carrinho.png" class="img img-responsive" />
     <strong>SEU CARRINHO</strong>
 </div>
 <div class="pmodal-body">
@@ -14,7 +15,11 @@
         </div>
     </div>
 </div>
-<div class="modal-footer">
-    <div>TOTAL</div>
-    <div>{{$ctrl.currentTotal | currency:"R$":2}}</div>
+<div class="pmodal-footer">
+    <div class="row">
+        <div class="justified-content" style="font-size: 18px">
+            <div><strong>TOTAL</strong></div>
+            <div><strong>{{$ctrl.currentTotal | currency:"R$":2}}</strong></div>
+        </div>
+    </div>
 </div>

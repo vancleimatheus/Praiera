@@ -1,11 +1,12 @@
 'use strict';
-app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibModal', '$document',
-    function ($scope, $location, $filter, $uibModal, $document) {
+app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'serviceState', 'growl',
+    function ($scope, $location, $filter, $uibModal, $document, serviceState, growl) {
         $scope.model = {
-            isOnline: true,
             currentTotal: 0,
+            minBuyAmount: 30
         };
 
+        ///////////////Modal!!
         var $ctrl = this;
         $ctrl.animationsEnabled = true;
 
@@ -35,6 +36,8 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                 $log.info('Modal dismissed at: ' + new Date());
             });
         };
+
+        ///////////////Modal!!
 
         $scope.kitPraiera = {
             selected: false,
@@ -108,18 +111,55 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
         }
 
         $scope.updateCart = function () {
-            $scope.productsCart = $scope.products.filter((v) => { return v.qty > 0 });
+            $scope.productsCart = $scope.products.filter(filterProduct);
 
-            $scope.model.currentTotal = $scope.products.reduce((p1, p2) => { return p1 + (p2.qty * p2.price) }, 0.0);
+            $scope.model.currentTotal = getTotal();
 
             if ($scope.kitPraiera.selected)
                 $scope.model.currentTotal += $scope.kitPraiera.price;
         }
+
+        $scope.nextStep = function () {
+            if (serviceState.shopStatus.isOnline) {
+                if(getTotal() > $scope.model.minBuyAmount){
+
+                } else {
+                    growl.error('Por favor adicione mais itens, o pedido mínimo é de:' + $filter('currency')($scope.model.minBuyAmount, 'R$', 2));
+                }
+            } else {
+                growl.error('Desculpe-nos, não estamos entregando no momento');
+            }
+        }
+
+        function showError(message) {
+            $scope.model.cantBuyMessage = message;
+            $scope.model.showCantBuy = true;
+            setTimeout(function () { $scope.model.showCantBuy = false; }, 2000);
+
+        }
+
+        function getTotal() {
+            return $scope.products.reduce( calculateTotal, 0.0);
+        }
+
+        function filterProduct(v) {
+            return v.qty > 0;
+        }
+
+        function calculateTotal(p1, p2) {
+            return p1 + (p2.qty * p2.price);
+        }
+
+        
     }
 ]);
 
 app.controller('CartModalController', function ($uibModalInstance, productsCart) {
     var $ctrl = this;
     $ctrl.productsCart = productsCart;
-    $ctrl.currentTotal = $ctrl.productsCart.reduce((p1, p2) => { return p1 + (p2.qty * p2.price) }, 0.0);
+    $ctrl.currentTotal = $ctrl.productsCart.reduce(calculateTotal, 0.0);
+
+    function calculateTotal(p1, p2) {
+        return p1 + (p2.qty * p2.price);
+    }
 });

@@ -35,15 +35,13 @@
     </div>
 
     <div class="row main-background">
-        <div class="col-md-12 produt">
+        <div class="col-md-12 produt" ng-click="moreProducts()">
             <p class="product-btn">Ver mais produtos</p>
         </div>
     </div>
     <div class="row main-background">
-        <div class="col-md-12 produt1">
-            <form class="form">
-                <input type="checkbox" ng-model="kitPraiera.selected" ng-change="updateCart()"><strong> Levar <span class="btn2">KIT PRAIERA</span> por mais {{kitPraiera.price | currency:"R$":2}}</strong>
-            </form>
+        <div class="col-md-12 produt1" style="cursor: pointer">
+            <input type="checkbox" ng-model="kitPraiera.selected" ng-change="updateCart()"><strong> Levar <span class="btn2" style="cursor: pointer" ng-click="showKit()">KIT PRAIERA</span> por mais {{kitPraiera.price | currency:"R$":2}}</strong>
         </div>
     </div>
     <div class="row">

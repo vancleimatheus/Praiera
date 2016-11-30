@@ -19,12 +19,4 @@ app.config(['growlProvider', function (growlProvider) {
     growlProvider.globalDisableCountDown(true);
 }]);
 
-app.factory('serviceState', function () {
-    return {
-        shopStatus: {
-            isOnline: true,
-            deliveryText: 'ESTAMOS ENTREGANDO',
-            image: 'img/Online.png'
-        }
-    };
-});
+app.constant('serviceBase', { value: 'http://localhost:50974/' });

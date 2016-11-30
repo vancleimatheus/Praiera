@@ -69,7 +69,9 @@
     <Content Include="app\app.js" />
     <Content Include="app\controllers\FirstStepController.js" />
     <Content Include="app\controllers\IndexController.js" />
+    <Content Include="app\popover\KitPraiera.html" />
     <Content Include="app\popover\Cart.html" />
+    <Content Include="app\services\mainService.js" />
     <Content Include="app\views\FirstStep.html" />
     <Content Include="img\bt_back.png" />
     <Content Include="img\bt_carrinho.png" />
@@ -102,7 +104,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="styles\style.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

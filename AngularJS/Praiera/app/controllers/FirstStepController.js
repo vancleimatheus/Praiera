@@ -1,6 +1,6 @@
 'use strict';
-app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'serviceState', 'growl',
-    function ($scope, $location, $filter, $uibModal, $document, serviceState, growl) {
+app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'growl',
+    function ($scope, $location, $filter, $uibModal, $document, mainService, growl) {
         $scope.model = {
             currentTotal: 0,
             minBuyAmount: 30
@@ -11,10 +11,14 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
         $ctrl.animationsEnabled = true;
 
         $scope.showCart = function () {
-            $ctrl.open('sm');
+            $ctrl.openCart('sm');
         }
 
-        $ctrl.open = function (size, parentSelector) {
+        $scope.showKit = function () {
+            $ctrl.openKit('sm');
+        }
+
+        $ctrl.openCart = function (size, parentSelector) {
             var modalInstance = $uibModal.open({
                 animation: $ctrl.animationsEnabled,
                 ariaLabelledBy: 'modal-title',
@@ -27,6 +31,27 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                     productsCart: function () {
                         return $scope.productsCart;
                     }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $ctrl.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+        };
+
+        $ctrl.openKit = function (size, parentSelector) {
+            var modalInstance = $uibModal.open({
+                animation: $ctrl.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/app/popover/KitPraiera.html',
+                controller: 'KitModalController',
+                controllerAs: '$ctrl',
+                size: size,
+                resolve: {
+                    content: null
                 }
             });
 
@@ -86,9 +111,7 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
             qty: 0
         }];
 
-        $scope.viewProducts = [];
-        $scope.viewProducts.push([$scope.products[0], $scope.products[1]]);
-        $scope.viewProducts.push([$scope.products[2], $scope.products[3]]);
+        formatProducts();
 
         $scope.Increase = function (model) {
             model.qty++;
@@ -119,9 +142,65 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                 $scope.model.currentTotal += $scope.kitPraiera.price;
         }
 
+        $scope.moreProducts = function () {
+            $scope.products.push({
+                id: '4',
+                name: 'Baden laden',
+                type: 'long neck',
+                capacity: '355ml',
+                price: 4,
+                image: 'img_brahmaex_ln.png',
+                qty: 0
+            }, {
+                id: '5',
+                name: 'Schinariol',
+                type: 'long neck',
+                capacity: '355ml',
+                price: 4,
+                image: 'img_brahmaex_ln.png',
+                qty: 0
+            }, {
+                id: '6',
+                name: 'Coronia',
+                type: 'long neck',
+                capacity: '355ml',
+                price: 4,
+                image: 'img_brahmaex_ln.png',
+                qty: 0
+            }, {
+                id: '7',
+                name: 'Skoles',
+                type: 'long neck',
+                capacity: '355ml',
+                price: 4,
+                image: 'img_brahmaex_ln.png',
+                qty: 0
+            })
+
+            formatProducts();
+        }
+
+        function formatProducts() {
+            $scope.viewProducts = [];
+
+            for (var i = 0; i < $scope.products.length; i = i + 2) {
+                if (i + 1 < $scope.products.length) {
+                    $scope.viewProducts.push([$scope.products[i], $scope.products[i + 1]]);
+                } else {
+                    $scope.viewProducts.push([$scope.products[i]]);
+                }                
+            }
+        }
+
         $scope.nextStep = function () {
-            if (serviceState.shopStatus.isOnline) {
-                if(getTotal() > $scope.model.minBuyAmount){
+            mainService.getConfig().then(function (data) {
+                nextStep_callback(data);
+            });
+        }
+
+        function nextStep_callback(data) {
+            if (data.isOnline) {
+                if (getTotal() >= data.minimunPurchase) {
 
                 } else {
                     growl.error('Por favor adicione mais itens, o pedido mínimo é de:' + $filter('currency')($scope.model.minBuyAmount, 'R$', 2));
@@ -130,6 +209,8 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                 growl.error('Desculpe-nos, não estamos entregando no momento');
             }
         }
+
+
 
         function showError(message) {
             $scope.model.cantBuyMessage = message;
@@ -162,4 +243,7 @@ app.controller('CartModalController', function ($uibModalInstance, productsCart)
     function calculateTotal(p1, p2) {
         return p1 + (p2.qty * p2.price);
     }
+});
+
+app.controller('KitModalController', function ($uibModalInstance, productsCart) {
 });

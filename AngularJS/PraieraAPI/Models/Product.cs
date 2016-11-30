@@ -14,5 +14,6 @@ namespace PraieraAPI.Models
         public double price { get; set; }
         public string image { get; set; }
         public int qty { get; set; }
+        public int ranking { get; set; }
     }
 }

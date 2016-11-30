@@ -71,6 +71,7 @@
     <Content Include="app\controllers\IndexController.js" />
     <Content Include="app\popover\KitPraiera.html" />
     <Content Include="app\popover\Cart.html" />
+    <Content Include="app\services\productsService.js" />
     <Content Include="app\services\mainService.js" />
     <Content Include="app\views\FirstStep.html" />
     <Content Include="img\bt_back.png" />

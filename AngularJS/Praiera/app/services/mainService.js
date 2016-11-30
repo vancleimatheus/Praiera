@@ -1,7 +1,7 @@
 ﻿
 app.factory('mainService', ['$http', 'serviceBase',
     function ($http, serviceBase) {
-        var mainService = {};
+        var service = {};
 
         var _getConfig = function () {
 
@@ -11,9 +11,9 @@ app.factory('mainService', ['$http', 'serviceBase',
 
         };
 
-        mainService.GetConfig = _getConfig;
+        service.GetConfig = _getConfig;
 
-        return mainService;
+        return service;
     }
 ]);
 

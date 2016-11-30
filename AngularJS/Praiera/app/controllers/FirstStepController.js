@@ -1,14 +1,16 @@
 'use strict';
-app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'growl',
-    function ($scope, $location, $filter, $uibModal, $document, mainService, growl) {
+app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'productsService', 'growl',
+    function ($scope, $location, $filter, $uibModal, $document, mainService, productsService, growl) {
         $scope.model = {
             currentTotal: 0,
             minBuyAmount: 30
         };
 
+        $scope.products = [];
+
         ///////////////Modal!!
         var $ctrl = this;
-        $ctrl.animationsEnabled = true;
+        $ctrl.animationsEnabled = false;
 
         $scope.showCart = function () {
             $ctrl.openCart('sm');
@@ -18,7 +20,7 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
             $ctrl.openKit('sm');
         }
 
-        $ctrl.openCart = function (size, parentSelector) {
+        $ctrl.openCart = function (size) {
             var modalInstance = $uibModal.open({
                 animation: $ctrl.animationsEnabled,
                 ariaLabelledBy: 'modal-title',
@@ -34,14 +36,12 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                 }
             });
 
-            modalInstance.result.then(function (selectedItem) {
-                $ctrl.selected = selectedItem;
-            }, function () {
-                $log.info('Modal dismissed at: ' + new Date());
+            modalInstance.result.then(function (selectedItem) {                
+            }, function () {                
             });
         };
 
-        $ctrl.openKit = function (size, parentSelector) {
+        $ctrl.openKit = function (size) {
             var modalInstance = $uibModal.open({
                 animation: $ctrl.animationsEnabled,
                 ariaLabelledBy: 'modal-title',
@@ -49,16 +49,11 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                 templateUrl: '/app/popover/KitPraiera.html',
                 controller: 'KitModalController',
                 controllerAs: '$ctrl',
-                size: size,
-                resolve: {
-                    content: null
-                }
+                size: size
             });
 
             modalInstance.result.then(function (selectedItem) {
-                $ctrl.selected = selectedItem;
             }, function () {
-                $log.info('Modal dismissed at: ' + new Date());
             });
         };
 
@@ -76,42 +71,6 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
             templateUrl: 'Cart.html',
             title: 'Carrinho'
         };
-
-        $scope.products = [{
-            id: '0',
-            name: 'Itaipava Pilsen',
-            type: 'latinha "shot"',
-            capacity: '269ml',
-            price: 3,
-            image: 'img_itaipava_shot.png',
-            qty: 0
-        }, {
-            id: '1',
-            name: 'Brahma Pilsen',
-            type: 'lata',
-            capacity: '350ml',
-            price: 3.5,
-            image: 'img_brahma_lt.png',
-            qty: 0
-        }, {
-            id: '2',
-            name: 'Devassa Loura',
-            type: 'long neck',
-            capacity: '355ml',
-            price: 5,
-            image: 'img_devassa_ln.png',
-            qty: 0
-        }, {
-            id: '3',
-            name: 'Brahma Weiss',
-            type: 'long neck',
-            capacity: '355ml',
-            price: 5,
-            image: 'img_brahmaex_ln.png',
-            qty: 0
-        }];
-
-        formatProducts();
 
         $scope.Increase = function (model) {
             model.qty++;
@@ -143,41 +102,10 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
         }
 
         $scope.moreProducts = function () {
-            $scope.products.push({
-                id: '4',
-                name: 'Baden laden',
-                type: 'long neck',
-                capacity: '355ml',
-                price: 4,
-                image: 'img_brahmaex_ln.png',
-                qty: 0
-            }, {
-                id: '5',
-                name: 'Schinariol',
-                type: 'long neck',
-                capacity: '355ml',
-                price: 4,
-                image: 'img_brahmaex_ln.png',
-                qty: 0
-            }, {
-                id: '6',
-                name: 'Coronia',
-                type: 'long neck',
-                capacity: '355ml',
-                price: 4,
-                image: 'img_brahmaex_ln.png',
-                qty: 0
-            }, {
-                id: '7',
-                name: 'Skoles',
-                type: 'long neck',
-                capacity: '355ml',
-                price: 4,
-                image: 'img_brahmaex_ln.png',
-                qty: 0
-            })
-
-            formatProducts();
+            productsService.GetProducts().then(function (data) {
+                $scope.products = $scope.products.concat(data);
+                formatProducts();
+            });            
         }
 
         function formatProducts() {
@@ -231,7 +159,7 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
             return p1 + (p2.qty * p2.price);
         }
 
-        
+        $scope.moreProducts();
     }
 ]);
 
@@ -243,7 +171,16 @@ app.controller('CartModalController', function ($uibModalInstance, productsCart)
     function calculateTotal(p1, p2) {
         return p1 + (p2.qty * p2.price);
     }
+
+    $ctrl.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
 });
 
-app.controller('KitModalController', function ($uibModalInstance, productsCart) {
+app.controller('KitModalController', function ($uibModalInstance) {
+    var $ctrl = this;
+
+    $ctrl.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
 });

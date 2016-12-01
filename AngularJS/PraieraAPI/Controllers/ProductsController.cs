@@ -20,7 +20,7 @@ namespace PraieraAPI.Controllers
 
             var cmd = cn.CreateCommand();
 
-            cmd.CommandText = "SELECT TOP " + nextQty.ToString() + " Id, Name, Type, Capacity, Price, Image FROM Products WHERE Ranking>" + Ranking + " ORDER BY Ranking";
+            cmd.CommandText = "SELECT TOP " + nextQty.ToString() + " Id, Name, Type, Capacity, Price, Image, Ranking FROM Products WHERE Ranking>" + Ranking + " ORDER BY Ranking";
             var reader = cmd.ExecuteReader();
 
             while (reader.Read())
@@ -33,7 +33,8 @@ namespace PraieraAPI.Controllers
                     capacity = reader.GetString(3),
                     price = reader.GetDouble(4),
                     image = reader.GetString(5),
-                    qty = 0
+                    qty = 0,
+                    ranking = reader.GetInt32(6)
                 });
             }
 

@@ -3,10 +3,11 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
     function ($scope, $location, $filter, $uibModal, $document, mainService, productsService, growl) {
         $scope.model = {
             currentTotal: 0,
-            minBuyAmount: 30
+            noMoreProducts: false
         };
 
         $scope.products = [];
+        $scope.viewProducts = [];
 
         ///////////////Modal!!
         var $ctrl = this;
@@ -17,7 +18,7 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
         }
 
         $scope.showKit = function () {
-            $ctrl.openKit('sm');
+            $ctrl.openKit();
         }
 
         $ctrl.openCart = function (size) {
@@ -102,16 +103,23 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
         }
 
         $scope.moreProducts = function () {
+            var currentSize = $scope.products.length;
+
             productsService.GetProducts().then(function (data) {
-                $scope.products = $scope.products.concat(data);
-                formatProducts();
+                if (data.length > 0) {
+                    for (var i = 0; i < data.length; i++)
+                        $scope.products.push(data[i]);
+
+                    formatProducts(currentSize);
+                } else {
+                    $scope.model.noMoreProducts = true;
+                    growl.success('Exibindo todos os produtos');
+                }
             });            
         }
 
-        function formatProducts() {
-            $scope.viewProducts = [];
-
-            for (var i = 0; i < $scope.products.length; i = i + 2) {
+        function formatProducts(start) {
+            for (var i = start; i < $scope.products.length; i = i + 2) {
                 if (i + 1 < $scope.products.length) {
                     $scope.viewProducts.push([$scope.products[i], $scope.products[i + 1]]);
                 } else {
@@ -121,7 +129,7 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
         }
 
         $scope.nextStep = function () {
-            mainService.getConfig().then(function (data) {
+            mainService.GetConfig().then(function (data) {
                 nextStep_callback(data);
             });
         }
@@ -131,7 +139,7 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                 if (getTotal() >= data.minimunPurchase) {
 
                 } else {
-                    growl.error('Por favor adicione mais itens, o pedido mínimo é de:' + $filter('currency')($scope.model.minBuyAmount, 'R$', 2));
+                    growl.error('Por favor adicione mais itens, o pedido mínimo é de:' + $filter('currency')(data.minimunPurchase, 'R$', 2));
                 }
             } else {
                 growl.error('Desculpe-nos, não estamos entregando no momento');

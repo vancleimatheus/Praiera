@@ -1,6 +1,13 @@
 <div class="pmodal-header">
-    <img src="../../img/ico_carrinho.png" class="img img-responsive" />
-    <strong>SEU CARRINHO</strong>
+    <div class="justified-content">
+        <div>
+            <img src="../../img/ico_carrinho.png" class="img img-responsive" />
+            <strong>SEU CARRINHO</strong>
+        </div>
+        <div>
+            <button class="close-btn" ng-click="$ctrl.cancel()">X</button>
+        </div>
+    </div>
 </div>
 <div class="pmodal-body">
     <div class="row">
@@ -9,7 +16,7 @@
     <div class="row" ng-repeat="product in $ctrl.productsCart">
         <strong>{{product.name}}</strong><br />
         <small>{{product.type}} {{product.capacity}}</small><br />
-        <div class="justified-content">
+        <div class="justified-content" style="width: 90%">
             <div><small>{{product.qty}} Un X {{product.price | currency:"R$":2}}</small></div>
             <div><strong>{{product.price * product.qty | currency:"R$":2}}</strong></div>
         </div>

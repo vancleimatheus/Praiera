@@ -56,7 +56,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%
+    width: 95%
 }
 
 .menu-opener, .menu-opener:hover, .menu-opener.active, .menu-opener-inner, .menu-opener-inner::before, .menu-opener-inner::after, .menu, .menu.active {
@@ -394,6 +394,19 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 .amount
 {
 	font-size:30px;
+}
+.close-btn {
+	color:white;
+	text-align:center;
+	font-size: 19px;
+	background:#4D7479;
+	background-image: -webkit-linear-gradient(top, #4D7479, #043945);
+    background-image: -moz-linear-gradient(top, #4D7479, #043945);
+    background-image: -ms-linear-gradient(top, #4D7479, #043945);
+    background-image: -o-linear-gradient(top, #4D7479, #043945);
+    background-image: linear-gradient(to bottom, #4D7479, #043945);
+    border-radius:5px;
+    border-width: 1px;
 }
 .produt
 {

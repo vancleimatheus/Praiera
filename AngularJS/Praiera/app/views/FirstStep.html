@@ -1,4 +1,4 @@
-<div ng-controller="FirstStepController">
+<div>
     <div growl></div>
     <div class="row main-background">
         <div class="col-md-12 first-heading">
@@ -34,7 +34,7 @@
         </div>        
     </div>
 
-    <div class="row main-background">
+    <div class="row main-background" ng-hide="model.noMoreProducts">
         <div class="col-md-12 produt" ng-click="moreProducts()">
             <p class="product-btn">Ver mais produtos</p>
         </div>

@@ -8,7 +8,9 @@ app.factory('productsService', ['$http', 'serviceBase',
         var _getProducts = function () {
 
             return $http.get(serviceBase.value + 'api/products/get/?Ranking=' + internalCounter + '&nextQty=' + PRODUCT_CHUNK).then(function (response) {
-                internalCounter = response.data[response.data.length-1].ranking;
+                if(response.data.length>0)
+                    internalCounter = response.data[response.data.length - 1].ranking;
+
                 return response.data;
             });
 

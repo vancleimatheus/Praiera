@@ -15,5 +15,9 @@ app.controller('SecondStepController', ['$scope', '$location', '$filter', '$uibM
         $scope.previousStep = function () {
             $location.path('firststep');
         }
+
+        $scope.nextStep = function () {
+            $location.path('thirdstep');
+        }
     }
 ]);

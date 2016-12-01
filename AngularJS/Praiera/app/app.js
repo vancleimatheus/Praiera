@@ -16,6 +16,11 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/SecondStep.html"
     });
 
+    $routeProvider.when("/thirdstep", {
+        controller: "ThirdStepController",
+        templateUrl: "/app/views/ThirdStep.html"
+    });
+
     $routeProvider.otherwise({ redirectTo: "/firststep" });
 });
 

@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\controllers\ThirdStepController.js" />
     <Content Include="app\controllers\SecondStepController.js" />
     <Content Include="app\controllers\FirstStepController.js" />
     <Content Include="app\controllers\IndexController.js" />
@@ -75,6 +76,7 @@
     <Content Include="app\services\cartService.js" />
     <Content Include="app\services\productsService.js" />
     <Content Include="app\services\mainService.js" />
+    <Content Include="app\views\ThirdStep.html" />
     <Content Include="app\views\SecondStep.html" />
     <Content Include="app\views\FirstStep.html" />
     <Content Include="img\bt_back.png" />

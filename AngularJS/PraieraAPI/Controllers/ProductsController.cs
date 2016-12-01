@@ -20,7 +20,7 @@ namespace PraieraAPI.Controllers
 
             var cmd = cn.CreateCommand();
 
-            cmd.CommandText = "SELECT TOP " + nextQty.ToString() + " Id, Name, Type, Capacity, Price, Image, Ranking FROM Products WHERE Ranking>" + Ranking + " ORDER BY Ranking";
+            cmd.CommandText = "SELECT TOP " + nextQty.ToString() + " Id, Name, Type, Capacity, Price, Image, Ranking FROM Products WHERE Available=1 AND Ranking>" + Ranking + " ORDER BY Ranking";
             var reader = cmd.ExecuteReader();
 
             while (reader.Read())

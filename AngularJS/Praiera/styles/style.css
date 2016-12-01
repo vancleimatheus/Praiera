@@ -10,6 +10,34 @@ body{padding:0px; margin:0px !important}
   box-sizing: border-box;
 }
 
+.secondpage-mainbox {
+    width: 90%;
+    background-color: white;
+    height: auto;
+    margin: 0 auto;    
+    position: relative;
+    border-radius: 5px;
+}
+
+.secondpage-infobox {
+    width: 90%;
+    background-color: white;
+    height: auto;
+    margin: 0 auto;    
+    position: relative;
+    border-radius: 5px;
+	text-align:center;
+	font-size: 19px;
+	background:#4D7479;
+	background-image: -webkit-linear-gradient(top, #4D7479, #043945);
+    background-image: -moz-linear-gradient(top, #4D7479, #043945);
+    background-image: -ms-linear-gradient(top, #4D7479, #043945);
+    background-image: -o-linear-gradient(top, #4D7479, #043945);
+    background-image: linear-gradient(to bottom, #4D7479, #043945);
+    border-radius:5px;
+    border-width: 1px;
+}
+
 input[type="number"] {
     width: 83px;
     text-align: center;

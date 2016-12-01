@@ -2,6 +2,13 @@
 app.factory('mainService', ['$http', 'serviceBase',
     function ($http, serviceBase) {
         var service = {};
+        var appState = {
+            kitPraiera: {
+                selected: false,
+                price: 20
+            }
+
+        }
 
         var _getConfig = function () {
 
@@ -11,6 +18,7 @@ app.factory('mainService', ['$http', 'serviceBase',
 
         };
 
+        service.appState = appState;
         service.GetConfig = _getConfig;
 
         return service;

@@ -1,9 +1,9 @@
 'use strict';
-app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'productsService', 'growl',
-    function ($scope, $location, $filter, $uibModal, $document, mainService, productsService, growl) {
+app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'productsService', 'cartService', 'growl',
+    function ($scope, $location, $filter, $uibModal, $document, mainService, productsService, cartService, growl) {
         $scope.model = {
-            currentTotal: 0,
-            noMoreProducts: false
+            noMoreProducts: false,
+            total: 0
         };
 
         $scope.products = [];
@@ -32,7 +32,7 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                 size: size,
                 resolve: {
                     productsCart: function () {
-                        return $scope.productsCart;
+                        return cartService.getProductsCart();
                     }
                 }
             });
@@ -58,14 +58,11 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
             });
         };
 
-        ///////////////Modal!!
+        ///////////////Close Modal!!
 
-        $scope.kitPraiera = {
-            selected: false,
-            price: 20
-        }
+        $scope.kitPraiera = mainService.appState.kitPraiera;
 
-        $scope.productsCart = [];
+        $scope.productsCart = cartService.productsCart;
 
         $scope.popOverCart = {
             content: 'Carrinho!',
@@ -87,34 +84,31 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
             $scope.updateCart();
         }
 
+        $scope.updateCart = function () {
+            $scope.model.total = cartService.updateCart($scope.products);
+        }
+
         $scope.checkValue = function (model) {
             if (!(Number(model.qty) === model.qty) || (model.qty % 1 !== 0)) {
                 model.qty.isInteger = 0;
             }
         }
 
-        $scope.updateCart = function () {
-            $scope.productsCart = $scope.products.filter(filterProduct);
 
-            $scope.model.currentTotal = getTotal();
-
-            if ($scope.kitPraiera.selected)
-                $scope.model.currentTotal += $scope.kitPraiera.price;
-        }
-
-        $scope.moreProducts = function () {
+        $scope.moreProducts = function (sendMore) {
             var currentSize = $scope.products.length;
 
-            productsService.GetProducts().then(function (data) {
-                if (data.length > 0) {
-                    for (var i = 0; i < data.length; i++)
-                        $scope.products.push(data[i]);
+            productsService.GetProducts(sendMore).then(function (data) {
+                if (data.length !== currentSize) {
+                    $scope.products = data;
 
                     formatProducts(currentSize);
                 } else {
                     $scope.model.noMoreProducts = true;
                     growl.success('Exibindo todos os produtos');
                 }
+
+                $scope.updateCart();
             });            
         }
 
@@ -136,8 +130,9 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
 
         function nextStep_callback(data) {
             if (data.isOnline) {
-                if (getTotal() >= data.minimunPurchase) {
-
+                if (cartService.getTotal() >= data.minimunPurchase) {
+                    cartService.saveCart();
+                    $location.path('/secondstep');
                 } else {
                     growl.error('Por favor adicione mais itens, o pedido mínimo é de:' + $filter('currency')(data.minimunPurchase, 'R$', 2));
                 }
@@ -146,28 +141,7 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
             }
         }
 
-
-
-        function showError(message) {
-            $scope.model.cantBuyMessage = message;
-            $scope.model.showCantBuy = true;
-            setTimeout(function () { $scope.model.showCantBuy = false; }, 2000);
-
-        }
-
-        function getTotal() {
-            return $scope.products.reduce( calculateTotal, 0.0);
-        }
-
-        function filterProduct(v) {
-            return v.qty > 0;
-        }
-
-        function calculateTotal(p1, p2) {
-            return p1 + (p2.qty * p2.price);
-        }
-
-        $scope.moreProducts();
+        $scope.moreProducts(false);        
     }
 ]);
 

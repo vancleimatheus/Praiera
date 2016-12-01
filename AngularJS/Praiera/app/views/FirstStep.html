@@ -35,7 +35,7 @@
     </div>
 
     <div class="row main-background" ng-hide="model.noMoreProducts">
-        <div class="col-md-12 produt" ng-click="moreProducts()">
+        <div class="col-md-12 produt" ng-click="moreProducts(true)">
             <p class="product-btn">Ver mais produtos</p>
         </div>
     </div>
@@ -47,7 +47,7 @@
     <div class="row">
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer1" ng-click="showCart()" style="cursor: pointer">
             <img src="img/bt_carrinho.png" class="img img-responsive footer-img">
-            <p class="footer-text">valor total <br> <strong class="footer-price">{{model.currentTotal | currency:"R$":2}}</strong></p>
+            <p class="footer-text">valor total <br> <strong class="footer-price">{{model.total | currency:"R$":2}}</strong></p>
         </div>
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="nextStep()" style="cursor: pointer">
             <p class="footer-text1"><strong>FINALIZAR</strong><br> <span class="footer-price">PEDIDO!</span></p>

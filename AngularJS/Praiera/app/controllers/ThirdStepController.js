@@ -1,7 +1,7 @@
-'use strict';
+ï»¿'use strict';
 app.controller('ThirdStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'cartService', 'productsService', 'growl',
     function ($scope, $location, $filter, $uibModal, $document, mainService, cartService, productsService, growl) {
-        $scope.title = 'Procurando localização';
+        $scope.title = 'Procurando localizaÃ§Ã£o';
 
         $scope.$on('location_found', function (sender, locationName) {
             $scope.title = locationName;
@@ -44,7 +44,7 @@ app.directive('myMap', function () {
                     codeLatLng(pos);
 
                     infoWindow.setPosition(pos);
-                    infoWindow.setContent('Você está aqui!');
+                    infoWindow.setContent('VocÃª estÃ¡ aqui!');
                     map.setCenter(pos);
                 }, function () {
                     console.log('Deu erro!!!');

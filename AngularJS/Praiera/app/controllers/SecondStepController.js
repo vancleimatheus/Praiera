@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 app.controller('SecondStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'cartService', 'productsService', 'growl',
     function ($scope, $location, $filter, $uibModal, $document, mainService, cartService, productsService, growl) {
         $scope.productsCart = [];

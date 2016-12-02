@@ -1,4 +1,4 @@
-var app = angular.module('Praiera', ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'angular-growl']);
+﻿var app = angular.module('Praiera', ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'angular-growl']);
 
 app.config(function ($routeProvider) {    
     $routeProvider.otherwise({ redirectTo: "/firststep" });

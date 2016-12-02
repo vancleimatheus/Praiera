@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 app.controller('IndexController', ['$scope', '$location', '$window', 'mainService',
     function ($scope, $location, $window, mainService) {
 

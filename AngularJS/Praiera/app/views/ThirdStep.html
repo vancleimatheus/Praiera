@@ -1,72 +1,65 @@
-﻿<html>
-<head>
-    <meta charset="utf-8">
-</head>
-<body>
-    <div class="row" style="background: url(../../img/fundo_passo3.jpg)">
-        <div growl></div>
-        <div class="row">
-            <div class="col-md-12 first-heading">
-                <h3>Passo 3/3: <strong>Confirme sua localização!</strong></h3>
-            </div>
+﻿<div class="row" style="background: url(../../img/fundo_passo3.jpg)">
+    <div growl></div>
+    <div class="row">
+        <div class="col-md-12 first-heading">
+            <h3>Passo 3/3: <strong>Confirme sua localização!</strong></h3>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="secondpage-mainbox">
-                <div class="pmodal-header">
-                    <div class="justified-content">
-                        <div>
-                            <strong>{{title}}</strong>
-                        </div>
-                        <div>
-                            &nbsp;
-                        </div>
-                    </div>
-                </div>
-                <div class="pmodal-body" style="margin-left: 0px">
-                    <div my-map="" style="height:200px"></div>
-                </div>
-                <div class="pmodal-body" style="margin-left: 0px">
-                    <div style="margin-left: 10px; margin-right: 10px">
-                        <div class="thirdpage-title">OBSERVAÇÕES</div>
-                        <small>Digite algo que facilite para nós encontrarmos você: (Ex. Próximo ao salva-vidas, meu guarda-sol é verde, etc.)</small>
-                        <textarea class="form-control" id="txtObservacoes"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="secondpage-mainbox" style="margin-top:15px; margin-bottom: 15px; overflow: auto; padding: 10px">
-                <div class="pmodal-body" style="margin-left: 0px">
+    <div class="row">
+        <div class="secondpage-mainbox">
+            <div class="pmodal-header">
+                <div class="justified-content">
                     <div>
-                        <div class="col-lg-8 col-md-8 col-xs-8 col-xl-8">
-                            <div class="thirdpage-title">NOME</div>
-                            <input type="text" class="form-control" />
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-xs-4 col-xl-4">
-                            <div class="thirdpage-title">TELEFONE</div>
-                            <input type="tel" class="form-control" />
-                        </div>
+                        <strong>{{title}}</strong>
                     </div>
-                    <div class="col-lg-12 col-md-12 col-xs-12 col-xl-12" style="margin-top:15px;margin-bottom:15px; text-align: center; color: #BF7E01">
-                        Preencha o número de telefone completo<br />A partir de agora nos comunicaremos <br />através de mensagens no celular.
+                    <div>
+                        &nbsp;
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row" style="padding-top:10px; padding-bottom: 10px">
-            <div class="thirdpage-infobox" style="height: 60px;">
-                <div style="color: white; font-size: 16px;">O TEMPO ESTIMADO PARA SUA ENTREGA É DE ATÉ 30 MINUTOS.</div>
+            <div class="pmodal-body" style="margin-left: 0px">
+                <div my-map="" style="height:200px"></div>
+            </div>
+            <div class="pmodal-body" style="margin-left: 0px">
+                <div style="margin-left: 10px; margin-right: 10px">
+                    <div class="thirdpage-title">OBSERVAÇÕES</div>
+                    <small>Digite algo que facilite para nós encontrarmos você: (Ex. Próximo ao salva-vidas, meu guarda-sol é verde, etc.)</small>
+                    <textarea class="form-control" id="txtObservacoes"></textarea>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="previousStep()" style="cursor: pointer; background-color: #734200">
-                <img src="img/bt_back.png" class="img img-responsive footer-img">
-                <p class="footer-text" style="padding-top: 20px">Ops, esqueci algo <br> <strong class="footer-price">VOLTAR</strong></p>
-            </div>
-            <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="nextStep()" style="cursor: pointer">
-                <p class="footer-text1">É ISSO AÍ!<br> <span class="footer-price"><strong>FINALIZAR!</strong></span></p>
-                <img src="img/bt_next.png" class="img img-responsive footer-img1">
+        <div class="secondpage-mainbox" style="margin-top:15px; margin-bottom: 15px; overflow: auto; padding: 10px">
+            <div class="pmodal-body" style="margin-left: 0px">
+                <div>
+                    <div class="col-lg-8 col-md-8 col-xs-8 col-xl-8">
+                        <div class="thirdpage-title">NOME</div>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-4 col-xl-4">
+                        <div class="thirdpage-title">TELEFONE</div>
+                        <input type="tel" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-xs-12 col-xl-12" style="margin-top:15px;margin-bottom:15px; text-align: center; color: #BF7E01">
+                    Preencha o número de telefone completo<br />A partir de agora nos comunicaremos <br />através de mensagens no celular.
+                </div>
             </div>
         </div>
     </div>
-</body>
-</html>
+    <div class="row" style="padding-top:10px; padding-bottom: 10px">
+        <div class="thirdpage-infobox" style="height: 60px;">
+            <div style="color: white; font-size: 16px;">O TEMPO ESTIMADO PARA SUA ENTREGA É DE ATÉ 30 MINUTOS.</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="previousStep()" style="cursor: pointer; background-color: #734200">
+            <img src="img/bt_back.png" class="img img-responsive footer-img">
+            <p class="footer-text" style="padding-top: 20px">Ops, esqueci algo <br> <strong class="footer-price">VOLTAR</strong></p>
+        </div>
+        <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="nextStep()" style="cursor: pointer">
+            <p class="footer-text1">É ISSO AÍ!<br> <span class="footer-price"><strong>FINALIZAR!</strong></span></p>
+            <img src="img/bt_next.png" class="img img-responsive footer-img1">
+        </div>
+    </div>
+</div>

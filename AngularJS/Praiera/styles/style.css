@@ -11,7 +11,7 @@ body{padding:0px; margin:0px !important}
 }
 
 .secondpage-mainbox {
-    width: 90%;
+    width: 80%;
     background-color: white;
     height: auto;
     margin: 0 auto;    
@@ -20,7 +20,7 @@ body{padding:0px; margin:0px !important}
 }
 
 .secondpage-infobox {
-    width: 90%;
+    width: 80%;
     background-color: white;
     height: auto;
     margin: 0 auto;    
@@ -34,9 +34,28 @@ body{padding:0px; margin:0px !important}
     background-image: -ms-linear-gradient(top, #4D7479, #043945);
     background-image: -o-linear-gradient(top, #4D7479, #043945);
     background-image: linear-gradient(to bottom, #4D7479, #043945);
-    border-radius:5px;
     border-width: 1px;
 }
+
+.thirdpage-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #013A41
+}
+
+.thirdpage-infobox {
+    width: 80%;
+    background-color: white;
+    height: auto;
+    margin: 0 auto;    
+    position: relative;
+    border-radius: 5px;
+	text-align:center;
+	font-size: 19px;
+	background:#013A41;
+    border-width: 1px;
+}
+
 
 input[type="number"] {
     width: 83px;

@@ -1,4 +1,4 @@
-'use strict';
+Ôªø'use strict';
 app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'productsService', 'cartService', 'growl',
     function ($scope, $location, $filter, $uibModal, $document, mainService, productsService, cartService, growl) {
         $scope.model = {
@@ -134,10 +134,10 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                     cartService.saveCart();
                     $location.path('/secondstep');
                 } else {
-                    growl.error('Por favor adicione mais itens, o pedido mÌnimo È de:' + $filter('currency')(data.minimunPurchase, 'R$', 2));
+                    growl.error('Por favor adicione mais itens, o pedido m√≠nimo √© de:' + $filter('currency')(data.minimunPurchase, 'R$', 2));
                 }
             } else {
-                growl.error('Desculpe-nos, n„o estamos entregando no momento');
+                growl.error('Desculpe-nos, n√£o estamos entregando no momento');
             }
         }
 

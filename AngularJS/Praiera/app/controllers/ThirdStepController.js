@@ -1,15 +1,21 @@
 'use strict';
 app.controller('ThirdStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'cartService', 'productsService', 'growl',
     function ($scope, $location, $filter, $uibModal, $document, mainService, cartService, productsService, growl) {
+        $scope.title = 'Procurando localização';
 
+        $scope.$on('location_found', function (sender, locationName) {
+            $scope.title = locationName;
+            $scope.$apply();
+        });
     }
 ]);
 
 app.directive('myMap', function () {
     // directive link function
-    var link = function (scope, element, attrs) {
+    var link = function ($scope, $element, $attrs) {
         var map, infoWindow;
         var markers = [];
+        $scope.locationName = '';
 
         // map config
         var mapOptions = {
@@ -22,7 +28,7 @@ app.directive('myMap', function () {
         // init the map
         function initMap() {
             if (map === void 0) {
-                map = new google.maps.Map(element[0], mapOptions);
+                map = new google.maps.Map($element[0], mapOptions);
             }
 
             var infoWindow = new google.maps.InfoWindow({ map: map });
@@ -35,8 +41,10 @@ app.directive('myMap', function () {
                         lng: position.coords.longitude
                     };
 
+                    codeLatLng(pos);
+
                     infoWindow.setPosition(pos);
-                    infoWindow.setContent('Location found.');
+                    infoWindow.setContent('Você está aqui!');
                     map.setCenter(pos);
                 }, function () {
                     console.log('Deu erro!!!');
@@ -48,7 +56,28 @@ app.directive('myMap', function () {
             }
         }
 
-        // place a marker
+
+        function codeLatLng(latlng) {
+
+            var geocoder = new google.maps.Geocoder();
+
+            //var latlng = new google.maps.LatLng(lat, lng);
+            geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[1]) {
+                        //formatted address
+                        $scope.locationName = results[1].formatted_address
+
+                        $scope.$emit('location_found', $scope.locationName);
+
+                    } else {
+                        console.log('Address not found.');
+                    }
+                } else {
+                    console.log("Geocoder failed due to: " + status);
+                }
+            });
+        }
 
         // show the map and place some markers
         initMap();

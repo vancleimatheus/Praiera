@@ -18,3 +18,12 @@ C:\Projetos\Praiera\AngularJS\Praiera\bin\Microsoft.CodeDom.Providers.DotNetComp
 C:\Projetos\Praiera\AngularJS\Praiera\obj\Debug\Praiera.csprojResolveAssemblyReference.cache
 C:\Projetos\Praiera\AngularJS\Praiera\obj\Debug\Praiera.dll
 C:\Projetos\Praiera\AngularJS\Praiera\obj\Debug\Praiera.pdb
+C:\Projetos\Praiera\AngularJS\Praiera\bin\Newtonsoft.Json.dll
+C:\Projetos\Praiera\AngularJS\Praiera\bin\System.Net.Http.Formatting.dll
+C:\Projetos\Praiera\AngularJS\Praiera\bin\System.Web.Cors.dll
+C:\Projetos\Praiera\AngularJS\Praiera\bin\System.Web.Http.Cors.dll
+C:\Projetos\Praiera\AngularJS\Praiera\bin\System.Web.Http.dll
+C:\Projetos\Praiera\AngularJS\Praiera\bin\Newtonsoft.Json.xml
+C:\Projetos\Praiera\AngularJS\Praiera\bin\System.Net.Http.Formatting.xml
+C:\Projetos\Praiera\AngularJS\Praiera\bin\System.Web.Http.xml
+C:\Projetos\Praiera\AngularJS\Praiera\bin\System.Web.Http.Cors.xml

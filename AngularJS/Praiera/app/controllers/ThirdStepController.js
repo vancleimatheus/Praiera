@@ -7,6 +7,23 @@ app.controller('ThirdStepController', ['$scope', '$location', '$filter', '$uibMo
             $scope.title = locationName;
             $scope.$apply();
         });
+
+        $scope.buyerInfo = {
+            longitude: -27.4245595,
+            latitude: -48.3998562,
+            comments: '',
+            name: '',
+            phone: ''
+        }
+
+        $scope.Save = function () {            
+            cartService.saveToDB($scope.buyerInfo).then(function () {
+                growl.success('Seu pedido foi registrado, obrigado!');
+            }).catch(function (data) {
+                growl.error('Erro ao fazer o pedido.');
+                console.log(data);
+            });
+        }
     }
 ]);
 
@@ -40,6 +57,9 @@ app.directive('myMap', function () {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
                     };
+
+                    $scope.buyerInfo.latitude = pos.lat;
+                    $scope.buyerInfo.longitude = pos.lng;
 
                     codeLatLng(pos);
 

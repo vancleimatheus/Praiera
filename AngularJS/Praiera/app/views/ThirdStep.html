@@ -25,7 +25,7 @@
                 <div style="margin-left: 10px; margin-right: 10px">
                     <div class="thirdpage-title">OBSERVAÇÕES</div>
                     <small>Digite algo que facilite para nós encontrarmos você: (Ex. Próximo ao salva-vidas, meu guarda-sol é verde, etc.)</small>
-                    <textarea class="form-control" id="txtObservacoes"></textarea>
+                    <textarea class="form-control" id="txtObservacoes" ng-model="buyerInfo.comments"></textarea>
                 </div>
             </div>
         </div>
@@ -34,11 +34,11 @@
                 <div>
                     <div class="col-lg-8 col-md-8 col-xs-8 col-xl-8">
                         <div class="thirdpage-title">NOME</div>
-                        <input type="text" class="form-control" />
+                        <input type="text" class="form-control" ng-model="buyerInfo.name" />
                     </div>
                     <div class="col-lg-4 col-md-4 col-xs-4 col-xl-4">
                         <div class="thirdpage-title">TELEFONE</div>
-                        <input type="tel" class="form-control" />
+                        <input type="tel" class="form-control" ng-model="buyerInfo.phone" />
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-xs-12 col-xl-12" style="margin-top:15px;margin-bottom:15px; text-align: center; color: #BF7E01">
@@ -57,7 +57,7 @@
             <img src="img/bt_back.png" class="img img-responsive footer-img">
             <p class="footer-text" style="padding-top: 20px">Ops, esqueci algo <br> <strong class="footer-price">VOLTAR</strong></p>
         </div>
-        <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="nextStep()" style="cursor: pointer">
+        <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="Save()" style="cursor: pointer">
             <p class="footer-text1">É ISSO AÍ!<br> <span class="footer-price"><strong>FINALIZAR!</strong></span></p>
             <img src="img/bt_next.png" class="img img-responsive footer-img1">
         </div>

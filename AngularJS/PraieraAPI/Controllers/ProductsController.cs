@@ -31,7 +31,7 @@ namespace PraieraAPI.Controllers
                     name = reader.GetString(1),
                     type = reader.GetString(2),
                     capacity = reader.GetString(3),
-                    price = reader.GetDouble(4),
+                    price = reader.GetDecimal(4),
                     image = reader.GetString(5),
                     qty = 0,
                     ranking = reader.GetInt32(6)

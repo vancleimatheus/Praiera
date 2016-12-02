@@ -29,6 +29,18 @@ app.factory('cartService', ['$http', 'serviceBase', 'mainService',
             localStorage.setItem('praiera_Cart', JSON.stringify(_productsCart));
         }
 
+        var _saveToDB = function (buyerInfo) {
+            var data = {
+                purchase: buyerInfo,
+                products: _getProductsCart()
+            }
+
+            return $http.post(serviceBase.value + 'api/purchase/save/', data).then(function (response) {
+                localStorage.setItem('praiera_Cart', null);
+                return response;
+            });
+        }
+
         function filterProduct(v) {
             return v.qty > 0;
         }
@@ -60,7 +72,8 @@ app.factory('cartService', ['$http', 'serviceBase', 'mainService',
             updateCart: _updateCart,
             getTotal: _getTotal,
             getProductsCart: _getProductsCart,
-            saveCart: _saveCart
+            saveCart: _saveCart,
+            saveToDB: _saveToDB
         }        
 
         return service;

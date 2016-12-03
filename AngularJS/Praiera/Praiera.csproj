@@ -108,6 +108,7 @@
     <Content Include="img\bt_next.png" />
     <Content Include="img\fundo_passo2.jpg" />
     <Content Include="img\fundo_passo3.jpg" />
+    <Content Include="img\green_loading.gif" />
     <Content Include="img\ico_carrinho.png" />
     <Content Include="img\ico_kit.png" />
     <Content Include="img\ico_local.png" />

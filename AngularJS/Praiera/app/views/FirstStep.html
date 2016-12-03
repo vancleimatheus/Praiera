@@ -5,9 +5,9 @@
             <h3>Passo 1/3: <strong>O que voce quer beber?</strong></h3>
         </div>
     </div>
-    
+
+    <div class="row main-background" ng-show="viewProducts.length===0" style="text-align: center;font-size: 19px;"><br /><img src="../../img/loading.gif" class="img img-responsive"><br /><br />Carregando produtos<br />&nbsp;</div>
     <div class="row main-background" ng-repeat="pair in viewProducts">
-        <div ng-show="pair.length===0">Carregando<br/><img src="img/green_loading.gif" class="img img-responsive"></div>
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6" ng-repeat="product in pair">
             <img ng-src="img/{{product.image}}" class="img img-responsive">
 
@@ -36,19 +36,19 @@
     </div>
 
     <div class="row main-background" ng-hide="model.noMoreProducts">
-        <div class="col-md-12 produt" ng-click="moreProducts(true)">
+        <div class="col-md-12 produt" ng-click="moreProducts(true)" ng-show="viewProducts.length!==0">
             <p class="product-btn">Ver mais produtos</p>
         </div>
     </div>
     <div class="row main-background">
-        <div class="col-md-12 produt1" style="cursor: pointer">
+        <div class="col-md-12 produt1" style="cursor: pointer" ng-cloak  ng-show="viewProducts.length!==0">
             <input type="checkbox" ng-model="kitPraiera.selected" ng-change="updateCart()"><strong> Levar <span class="btn2" style="cursor: pointer" ng-click="showKit()">KIT PRAIERA</span> por mais {{kitPraiera.price | currency:"R$":2}}</strong>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer1" ng-click="showCart()" style="cursor: pointer">
             <img src="img/bt_carrinho.png" class="img img-responsive footer-img">
-            <p class="footer-text">valor total <br> <strong class="footer-price">{{model.total | currency:"R$":2}}</strong></p>
+            <p class="footer-text" ng-cloak>valor total <br> <strong class="footer-price">{{model.total | currency:"R$":2}}</strong></p>
         </div>
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="nextStep()" style="cursor: pointer">
             <p class="footer-text1"><strong>FINALIZAR</strong><br> <span class="footer-price">PEDIDO!</span></p>

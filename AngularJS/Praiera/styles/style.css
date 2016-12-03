@@ -484,6 +484,13 @@ body { margin-top: 3em; background: #eee; color: #555; font-family: 'Roboto', sa
 	position: absolute;
     bottom: -7px;
 }
+.inputDiv {
+    padding-right: 5px;
+}
+.plusDiv {
+    padding-left: 0px;
+}
+
 .btn1 {
   background: white;
   -webkit-border-radius: 5;
@@ -835,12 +842,78 @@ body { margin-top: 3em; background: #eee; color: #555; font-family: 'Roboto', sa
 
 }
 @media screen and (max-width: 375px) {
-	input[type="number"] {
-    width: 65px;
-	}
-	.row.first-neg-btn {
-    width: 212px;
+.btn {
+    background: #EAEBEF;
+    background-image: -webkit-linear-gradient(top, #EAEBEF, #CCD5DC);
+    background-image: -moz-linear-gradient(top, #EAEBEF, #CCD5DC);
+    background-image: -ms-linear-gradient(top, #EAEBEF, #CCD5DC);
+    background-image: -o-linear-gradient(top, #EAEBEF, #CCD5DC);
+    background-image: linear-gradient(to bottom, #EAEBEF, #CCD5DC);
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    font-family: Courier New;
+    color: #808080;
+    font-size: 12px;
+    padding-top: px;
+    padding-right: 10px;
+    padding-bottom: px;
+    padding-left: 10px;
+    text-decoration: none;
 }
+.btn1 {
+	    margin-left: -15px;
+	
+}
+}
+@media screen and (max-width: 320px) {
+	input[type="number"] {
+        width: 60px;
+	}
+    .inputDiv {
+        padding-right: 0px;
+        padding-left: 7px;
+    }
+    .plusDiv {
+        padding-left: 0px;
+        margin-left: -2px;
+    }
+	.row.first-neg-btn {
+        top: 88px;
+        width: inherit;
+    }
+    .footer2
+	{
+		background-color:#613301;
+		padding-top:24px;
+			padding-bottom: 25px;
+	}
+     .footer-text
+    {
+        color: white;
+        font-family: 'Roboto-Thin';
+        font-size: 18px;
+        padding-top: 10px;
+        float: left;
+        padding-left: 10px;
+    }
+    .footer-text1
+    {
+        font-family: 'Roboto-Black';
+        color: white;
+        font-size: 16px;
+        padding-top: 0px;
+        float: left;
+        padding-left: 10px;
+    }
+    .footer-text2
+    {
+        font-family: 'Roboto-Thin';
+        color: white;
+        font-size: 16px;
+    }
+
+
 .btn {
     background: #EAEBEF;
     background-image: -webkit-linear-gradient(top, #EAEBEF, #CCD5DC);

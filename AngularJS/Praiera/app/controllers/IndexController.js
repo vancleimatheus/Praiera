@@ -4,7 +4,6 @@ app.controller('IndexController', ['$scope', '$location', '$window', 'mainServic
 
         $scope.shopStatus = {
             isOnline: false,
-            deliveryText: 'ESTAMOS FECHADOS',
             image: 'img/Offline.png'
         }
 
@@ -12,13 +11,11 @@ app.controller('IndexController', ['$scope', '$location', '$window', 'mainServic
             if (data.isOnline === true) {
                 $scope.shopStatus = {
                     isOnline: true,
-                    deliveryText: 'ESTAMOS ENTREGANDO',
                     image: 'img/Online.png'
                 } 
             } else {
                 $scope.shopStatus ={
                     isOnline: false,
-                    deliveryText: 'ESTAMOS FECHADOS',
                     image: 'img/Offline.png'
                 }
             }

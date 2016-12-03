@@ -103,12 +103,13 @@
     <Content Include="app\views\ThirdStep.html" />
     <Content Include="app\views\SecondStep.html" />
     <Content Include="app\views\FirstStep.html" />
+    <Content Include="css\style.css" />
     <Content Include="img\bt_back.png" />
     <Content Include="img\bt_carrinho.png" />
     <Content Include="img\bt_next.png" />
     <Content Include="img\fundo_passo2.jpg" />
     <Content Include="img\fundo_passo3.jpg" />
-    <Content Include="img\green_loading.gif" />
+    <Content Include="img\loading.gif" />
     <Content Include="img\ico_carrinho.png" />
     <Content Include="img\ico_kit.png" />
     <Content Include="img\ico_local.png" />
@@ -128,6 +129,7 @@
     <Content Include="js\ui-bootstrap-2.3.0.min.js" />
     <Content Include="js\ui-bootstrap-tpls-2.3.0.min.js" />
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\iis.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,37 +1,37 @@
 ﻿<div>
-    <div growl></div>
     <div class="row main-background">
         <div class="col-md-12 first-heading">
-            <h3>Passo 1/3: <strong>O que voce quer beber?</strong></h3>
+            <span class="step">PASSO 1/3</span><h3>O que você quer beber?</h3>
         </div>
     </div>
 
     <div class="row main-background" ng-show="viewProducts.length===0" style="text-align: center;font-size: 19px;"><br /><img src="../../img/loading.gif" class="img img-responsive"><br /><br />Carregando produtos<br />&nbsp;</div>
     <div class="row main-background" ng-repeat="pair in viewProducts">
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6" ng-repeat="product in pair">
-            <img ng-src="img/{{product.image}}" class="img img-responsive">
+            <div>
+                <img ng-src="img/{{product.image}}" class="img img-responsive">
 
-            <div class="row first-box-text">
-                <div class="col-md-2"></div>
-                <div class="col-md-10">
-                    <p class="text1">
-                        <strong>{{ product.name }}</strong><br> {{ product.type }} <br> 269ml<br>
-                        <strong class="amount">{{product.price | currency:"R$":2}} </strong>
-                    </p>
+                <div class="row first-box-text">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10">
+                        <p class="text1">
+                            <strong>{{ product.name }}</strong><br> {{ product.type }} <br> 269ml<br>
+                            <strong class="amount">{{product.price | currency:"R$":2}} </strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="row first-neg-btn">
+                    <div class="col-md-3 col-xs-3 col-lg-3 col-xl-3" style="padding-left: 18px;">
+                        <button class="btn" ng-click="Decrease(product)">-</button>
+                    </div>
+                    <div class="col-md-5 col-xs-5 col-lg-5 col-xl-5" style="padding-right:5px">
+                        <p class="btn1"><input class="first-page-input" type="number" ng-model="product.qty" min="0" ng-change="updateCart()" /></p>
+                    </div>
+                    <div class="col-md-3 col-xs-3 col-lg-3 col-xl-3" style="padding-left:0px">
+                        <button class="btn" ng-click="Increase(product)">+</button>
+                    </div>
                 </div>
             </div>
-            <div class="row first-neg-btn">
-                <div class="col-md-3 col-xs-3 col-lg-3 col-xl-3" style="padding-left: 18px;">
-                    <button class="btn" ng-click="Decrease(product)">-</button>
-                </div>
-                <div class="col-md-5 col-xs-5 col-lg-5 col-xl-5" style="padding-right:5px">
-                    <p class="btn1"><input class="first-page-input" type="number" ng-model="product.qty" min="0" ng-change="updateCart()" /></p>
-                </div>
-                <div class="col-md-3 col-xs-3 col-lg-3 col-xl-3" style="padding-left:0px">
-                    <button class="btn" ng-click="Increase(product)">+</button>
-                </div>
-            </div>
-
         </div>        
     </div>
 

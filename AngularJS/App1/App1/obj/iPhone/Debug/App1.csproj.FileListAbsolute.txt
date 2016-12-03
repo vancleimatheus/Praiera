@@ -1,0 +1,11 @@
+C:\Projetos\Praiera\AngularJS\App1\App1\bin\iPhone\Debug\App1.exe
+C:\Projetos\Praiera\AngularJS\App1\App1\bin\iPhone\Debug\App1.pdb
+C:\Projetos\Praiera\AngularJS\App1\App1\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Projetos\Praiera\AngularJS\App1\App1\obj\iPhone\Debug\actool\_PartialAppManifest.items
+C:\Projetos\Praiera\AngularJS\App1\App1\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Projetos\Praiera\AngularJS\App1\App1\obj\iPhone\Debug\optimized\
+C:\Projetos\Praiera\AngularJS\App1\App1\obj\iPhone\Debug\App1.csprojResolveAssemblyReference.cache
+C:\Projetos\Praiera\AngularJS\App1\App1\obj\iPhone\Debug\App1.exe
+C:\Projetos\Praiera\AngularJS\App1\App1\obj\iPhone\Debug\App1.pdb
+C:\Projetos\Praiera\AngularJS\App1\App1\obj\iPhone\Debug\App1.exe.mdb
+C:\Projetos\Praiera\AngularJS\App1\App1\bin\iPhone\Debug\App1.exe.mdb

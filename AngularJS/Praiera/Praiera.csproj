@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\components\angular-locale_pt-br.js" />
     <Content Include="app\components\ng-dialog\ngDialog-theme-default.min.css" />
     <Content Include="app\components\ng-dialog\ngDialog.min.css" />
     <Content Include="app\components\ng-dialog\ngDialog.min.js" />

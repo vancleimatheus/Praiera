@@ -176,3 +176,6 @@ C:\Projetos\Praiera\AngularJS\PraieraAPI\bin\roslyn\System.IO.FileSystem.dll
 C:\Projetos\Praiera\AngularJS\PraieraAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Projetos\Praiera\AngularJS\PraieraAPI\bin\roslyn\vbc.exe.config
 C:\Projetos\Praiera\AngularJS\PraieraAPI\bin\roslyn\vbc.rsp
+C:\Projetos\Praiera\AngularJS\PraieraAPI\bin\System.Web.Cors.dll
+C:\Projetos\Praiera\AngularJS\PraieraAPI\bin\System.Web.Http.Cors.dll
+C:\Projetos\Praiera\AngularJS\PraieraAPI\bin\System.Web.Http.Cors.xml

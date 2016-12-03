@@ -88,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\components\ng-dialog\ngDialog-theme-default.min.css" />
+    <Content Include="app\components\ng-dialog\ngDialog.min.css" />
+    <Content Include="app\components\ng-dialog\ngDialog.min.js" />
     <Content Include="app\controllers\ThirdStepController.js" />
     <Content Include="app\controllers\SecondStepController.js" />
     <Content Include="app\controllers\FirstStepController.js" />
@@ -140,9 +143,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\components\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

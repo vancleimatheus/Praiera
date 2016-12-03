@@ -1,4 +1,16 @@
-﻿var app = angular.module('Praiera', ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'angular-growl']);
+﻿var app = angular.module('Praiera', ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'ngDialog']);
+
+app.run(function ($rootScope, ngDialog) {
+    $rootScope.showAlert = function (message, callback) {
+        ngDialog.open({
+            template: '<div class="infoBox"><div style="padding-bottom: 15px">' + message +
+                        '</div><div><button class="dialogButton" ng-click="closeThisDialog()">Fechar</button></div></div>',
+            preCloseCallback: callback,
+            plain: true,
+            showClose: false
+        });
+    }
+});
 
 app.config(function ($routeProvider) {    
     $routeProvider.otherwise({ redirectTo: "/firststep" });
@@ -23,10 +35,5 @@ app.config(function ($routeProvider) {
 
     $routeProvider.otherwise({ redirectTo: "/firststep" });
 });
-
-app.config(['growlProvider', function (growlProvider) {
-    growlProvider.globalTimeToLive(2000);
-    growlProvider.globalDisableCountDown(true);
-}]);
 
 app.constant('serviceBase', { value: 'http://localhost:50974/' });

@@ -1,6 +1,6 @@
 ﻿'use strict';
-app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'productsService', 'cartService', 'growl',
-    function ($scope, $location, $filter, $uibModal, $document, mainService, productsService, cartService, growl) {
+app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'productsService', 'cartService', 
+    function ($scope, $location, $filter, $uibModal, $document, mainService, productsService, cartService) {
         $scope.model = {
             noMoreProducts: false,
             total: 0
@@ -105,7 +105,8 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                     formatProducts(currentSize);
                 } else {
                     $scope.model.noMoreProducts = true;
-                    growl.success('Exibindo todos os produtos');
+
+                    $scope.showAlert('Exibindo todos os produtos');
                 }
 
                 $scope.updateCart();
@@ -134,10 +135,10 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                     cartService.saveCart();
                     $location.path('/secondstep');
                 } else {
-                    growl.error('Por favor adicione mais itens, o pedido mínimo é de:' + $filter('currency')(data.minimunPurchase, 'R$', 2));
+                    $scope.showAlert('Por favor adicione mais itens, o pedido mínimo é de:' + $filter('currency')(data.minimunPurchase, 'R$', 2));
                 }
             } else {
-                growl.error('Desculpe-nos, não estamos entregando no momento');
+                $scope.showAlert('Desculpe-nos, não estamos entregando no momento');
             }
         }
 

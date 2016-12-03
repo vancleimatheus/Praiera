@@ -26,7 +26,8 @@ app.factory('cartService', ['$http', 'serviceBase', 'mainService',
         }
 
         var _saveCart = function () {
-            localStorage.setItem('praiera_Cart', JSON.stringify(_productsCart));
+            if(lsTest() === true)
+                localStorage.setItem('praiera_Cart', JSON.stringify(_productsCart));
         }
 
         var _saveToDB = function (buyerInfo) {
@@ -36,7 +37,9 @@ app.factory('cartService', ['$http', 'serviceBase', 'mainService',
             }
 
             return $http.post(serviceBase.value + 'api/purchase/save/', data).then(function (response) {
-                localStorage.setItem('praiera_Cart', null);
+                if (lsTest() === true)
+                    localStorage.setItem('praiera_Cart', null);
+
                 return response;
             });
         }
@@ -55,7 +58,10 @@ app.factory('cartService', ['$http', 'serviceBase', 'mainService',
 
         var _getProductsCart = function () {
             if (_productsCart.length === 0) {
-                var _savedCart = localStorage.getItem('praiera_Cart');
+                var _savedCart = null;
+
+                if (lsTest() === true)
+                    _savedCart = localStorage.getItem('praiera_Cart');
 
                 if (_savedCart !== null)
                     _productsCart = JSON.parse(_savedCart);
@@ -66,6 +72,17 @@ app.factory('cartService', ['$http', 'serviceBase', 'mainService',
 
         var _getTotal = function () {
             return _currentTotal;
+        }
+
+        function lsTest() {
+            var test = 'test';
+            try {
+                localStorage.setItem(test, test);
+                localStorage.removeItem(test);
+                return true;
+            } catch (e) {
+                return false;
+            }
         }
 
         service = {

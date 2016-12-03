@@ -1,6 +1,6 @@
 ﻿'use strict';
-app.controller('ThirdStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'cartService', 'productsService', 'growl',
-    function ($scope, $location, $filter, $uibModal, $document, mainService, cartService, productsService, growl) {
+app.controller('ThirdStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'cartService', 'productsService', 
+    function ($scope, $location, $filter, $uibModal, $document, mainService, cartService, productsService) {
         $scope.title = 'Procurando localização';
 
         $scope.$on('location_found', function (sender, locationName) {
@@ -9,8 +9,8 @@ app.controller('ThirdStepController', ['$scope', '$location', '$filter', '$uibMo
         });
 
         $scope.buyerInfo = {
-            longitude: -27.4245595,
-            latitude: -48.3998562,
+            longitude: 0.0,
+            latitude: 0.0,
             comments: '',
             name: '',
             phone: ''
@@ -18,9 +18,9 @@ app.controller('ThirdStepController', ['$scope', '$location', '$filter', '$uibMo
 
         $scope.Save = function () {            
             cartService.saveToDB($scope.buyerInfo).then(function () {
-                growl.success('Seu pedido foi registrado, obrigado!');
+                $scope.showAlert('Seu pedido foi registrado, obrigado!');
             }).catch(function (data) {
-                growl.error('Erro ao fazer o pedido.');
+                $scope.showAlert('Infelizmente houve um erro ao fazer o pedido. Por favor tente novamente.');
                 console.log(data);
             });
         }
@@ -66,8 +66,12 @@ app.directive('myMap', function () {
                     infoWindow.setPosition(pos);
                     infoWindow.setContent('Você está aqui!');
                     map.setCenter(pos);
-                }, function () {
-                    console.log('Deu erro!!!');
+                }, function (data) {
+                    if (data.PERMISSION_DENIED === 1) {
+                        $scope.showAlert('O acesso a sua localização não foi permitido, por favor limpe as configurações, atualize a página e clique em "Permitir" quando solicitado.');
+                    } else {
+                        $scope.showAlert('Infelizmente não conseguimos determinar a sua localização. <br/><br/> Sem problemas, pressione "FINALIZAR" e vamos entrar em contato pelo Whatsapp!');
+                    }
                 });
             } else {
                 // Browser doesn't support Geolocation

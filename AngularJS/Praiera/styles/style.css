@@ -56,6 +56,21 @@ body{padding:0px; margin:0px !important}
     border-width: 1px;
 }
 
+.dialogButton {
+    color: white;
+    border-radius: 5px;
+	text-align:center;
+	background:#013A41;
+    border-width: 0px;
+    padding: 5px;
+}
+
+.infoBox {
+    color: #734100;
+    font-size: 14px;
+    text-align: center;
+}
+
 
 input[type="number"] {
     width: 83px;

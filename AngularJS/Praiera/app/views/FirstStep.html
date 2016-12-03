@@ -1,5 +1,5 @@
 ﻿<div>
-    <div class="row main-background">
+    <div class="row headingPadding main-background">
         <div class="col-md-12 first-heading">
             <span class="step">PASSO 1/3</span><h3>O que você quer beber?</h3>
         </div>
@@ -41,17 +41,21 @@
         </div>
     </div>
     <div class="row main-background">
-        <div class="col-md-12 produt1" style="cursor: pointer" ng-cloak  ng-show="viewProducts.length!==0">
-            <input type="checkbox" ng-model="kitPraiera.selected" ng-change="updateCart()"><strong> Levar <span class="btn2" style="cursor: pointer" ng-click="showKit()">KIT PRAIERA</span> por mais {{kitPraiera.price | currency:"R$":2}}</strong>
+        <div class="col-md-12 produt1" style="cursor: pointer;display:flex" ng-cloak  ng-show="viewProducts.length!==0">
+            <div style="margin: auto">
+                <span class="kitPraiera"><input type="checkbox" ng-model="kitPraiera.selected" ng-change="updateCart()">&nbsp;&nbsp;
+                    <span style="font-size:17px">Levar <span class="btn2" style="cursor: pointer" ng-click="showKit()">KIT PRAIÊRA</span> por {{kitPraiera.price | currency:"R$":2}}</span></span>                                
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer1" ng-click="showCart()" style="cursor: pointer">
             <img src="img/bt_carrinho.png" class="img img-responsive footer-img">
-            <p class="footer-text" ng-cloak>valor total <br> <strong class="footer-price">{{model.total | currency:"R$":2}}</strong></p>
+            <p class="footer-text" ng-cloak>Valor total <br> <strong class="footer-price">{{model.total | currency:"R$":2}}</strong></p>
         </div>
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="nextStep()" style="cursor: pointer">
-            <p class="footer-text1"><strong>FINALIZAR</strong><br> <span class="footer-price">PEDIDO!</span></p>
+            <span class="footer-text1">FINALIZAR</><br /> 
+            <span class="footer-text2">PEDIDO!</span></span>
             <img src="img/bt_next.png" class="img img-responsive footer-img1">
         </div>
     </div>    

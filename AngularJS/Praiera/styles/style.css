@@ -1,5 +1,5 @@
 body{padding:0px; margin:0px !important}
-.wraper{max-width:475px; margin:0px auto;position:relative}
+.wraper{max-width:475px; margin:0px auto;position:relative; background-color: #d69719}
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
 *,
@@ -8,6 +8,23 @@ body{padding:0px; margin:0px !important}
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.kitPraiera {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+input[type="checkbox"]{
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
 }
 
 .secondpage-mainbox {
@@ -370,7 +387,6 @@ li a:focus {
 
 /* demo styles */
 body { margin-top: 3em; background: #eee; color: #555; font-family: 'Roboto', sans-serif; }
-p, p a { font-size: 12px;text-align: center; color: #888; }
 .header
 {
 	background-color:#013A41;
@@ -400,17 +416,17 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 }
 
 .first-heading>h3 {
-    font-family: 'Roboto-Thin';   
-    font-weight: lighter;
-    margin-top: 0px
+    font-family: 'Roboto-Bold';       
+    margin-top: 0px;
+    font-size: 28px
 }
 .step {
-    font-family: 'Roboto-Black';
+    font-family: 'Roboto-Thin';
     font-weight: bolder;
-    font-size:10px;
+    font-size:14px;
 }
 .headingPadding {
-    padding-top: 10px;
+    padding-top: 23px !important;
 }
 
 .main-background
@@ -429,8 +445,8 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 }
 .text1
 {
-	    color: white;
-    font-size: 15px;
+    color: white;
+    font-size: 16px;
 	text-align:right;
 }
 .btn {
@@ -484,7 +500,7 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 }
 .amount
 {
-	font-size:30px;
+	font-size:17px;
 }
 .close-btn {
 	color:white;
@@ -508,7 +524,7 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 }
 .produt1
 {
-	font-size:18px;
+	font-size:20px;
 	text-align:center;
 	padding-top:10px;
 	padding-bottom:30px;
@@ -542,6 +558,7 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 	border-radius:5px;
 }
 .btn2 {
+    font-weight:bold;
   background: #416C72;
   background-image: -webkit-linear-gradient(top, #416C72, #0D414F);
   background-image: -moz-linear-gradient(top, #416C72, #0D414F);
@@ -550,7 +567,7 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
   background-image: linear-gradient(to bottom, #416C72, #0D414F);
   color: #d69719;
   font-size: 20px;
-  border-radius: px;
+  border-radius: 5px;
   padding: 5px 10px 5px 10px;
   text-decoration: none;
 }
@@ -587,39 +604,48 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 .footer-text
 {
     color: white;
-    font-size: 18px;
+    font-family: 'Roboto-Thin';
+    font-size: 20px;
     padding-top: 30px;
     float: left;
     padding-left: 10px;
 }
 .footer-text1
 {
+    font-family: 'Roboto-Black';
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     padding-top: 20px;
     float: left;
     padding-left: 30px;
 }
+.footer-text2
+{
+    font-family: 'Roboto-Thin';
+    color: white;
+    font-size: 20px;
+}
+
 .footer-price
 {
 	color:#d69719;
-	font-size:25px;
+	font-size:22px;
 }
 @media screen and (max-width: 420px) {
 	
     .text1 {
-        font-size:9px;
+        font-size:10px;
 		text-align:right;
     }
 		.first-box-text
 		{
 			position: absolute;
-			top: 13px;
-			right:20px;
+			top: 8px;
+			right:24px;
 		}
 		.amount
 			{
-				font-size:15px;
+				font-size:17px;
 			}
 			.btn {
 			  background: #EAEBEF;
@@ -676,7 +702,8 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 				.footer-text
 					{
 						color: white;
-						font-size: 12px;
+                        font-family: 'Roboto-Thin';
+                        font-size: 20px;
 						padding-top: 30px;
 						float: left;
 						padding-left: 10px;
@@ -684,16 +711,24 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 					.footer-price
 						{
 							color:#d69719;
-							font-size:15px;
+                            font-family: 'Roboto-Bold';
+							font-size:22px;
 						}
 						.footer-text1
-						{
-							color: white;
-							font-size: 10px;
-							padding-top: 18px;
-							float: left;
-							padding-left: 30px;
-						}
+                        {
+                            font-family: 'Roboto-Black';
+                            color: white;
+                            font-size: 20px;
+                            float: left;
+                            padding-top: 0px;
+                            padding-left: 3px;
+                        }
+                        .footer-text2
+                        {
+                            font-family: 'Roboto-Thin';
+                            color: white;
+                            font-size: 20px;
+                        }
 						.footer2
 						{
 							background-color:#613301;
@@ -702,7 +737,7 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 						}
 						.footer-img
 						{
-							width:30%;
+							width:25%;
 						}
 						.footer-img1
 						{
@@ -711,14 +746,14 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 }
 @media screen and (max-width: 992px) and (min-width: 420px) {
     .text1 {
-        font-size:15px;
+        font-size:16px;
 		text-align:right;
     }
 	.first-box-text
 		{
 			position: absolute;
-			top: 13px;
-			right:20px;
+			top: 8px;
+			right:24px;
 		}
 		.btn {
 			  background: #EAEBEF;
@@ -756,7 +791,8 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 			.footer-text
 					{
 						color: white;
-						font-size: 12px;
+                        font-family: 'Roboto-Thin';
+                        font-size: 20px;
 						padding-top: 30px;
 						float: left;
 						padding-left: 10px;
@@ -764,7 +800,8 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 					.footer-price
 						{
 							color:#d69719;
-							font-size:15px;
+                            font-family: 'Roboto-Bold';
+							font-size:22px;
 						}
 						.footer2
 						{
@@ -774,12 +811,19 @@ p, p a { font-size: 12px;text-align: center; color: #888; }
 						}
 						.footer-text1
 						{
+                            font-family: 'Roboto-Black';
 							color: white;
-							font-size: 12px;
-							padding-top: 20px;
+							font-size: 20px;
+							padding-top: 0px;
 							float: left;
-							padding-left: 30px;
+							padding-left: 3px;
 						}
+                        .footer-text2
+                        {
+                            font-family: 'Roboto-Thin';
+                            color: white;
+                            font-size: 20px;
+                        }
 }
 @media screen and (max-width: 414px) {
 	input[type="number"] {

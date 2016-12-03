@@ -16,6 +16,10 @@ app.controller('ThirdStepController', ['$scope', '$location', '$filter', '$uibMo
             phone: ''
         }
 
+        $scope.previousStep = function () {
+            $location.path('secondstep');
+        }
+
         $scope.Save = function () {            
             cartService.saveToDB($scope.buyerInfo).then(function () {
                 $scope.showAlert('Seu pedido foi registrado, obrigado!');

@@ -92,24 +92,26 @@
     }
 
     .bottomThin {
-        color: white;
-        font-family: 'Roboto-Thin';
         font-size: 16px;
     }
     .bottomThinLT {
-        color: white;
-        font-family: 'Roboto-Thin';
         font-size: 13px;
     }
-    .bottomBold {
-        color: white;
-        font-family: 'Roboto-Bold';
+    .bottomBold {        
         font-size: 16px;
     }
     .bottomBoldYellow {
-        color: #d69719;
-        font-family: 'Roboto-Bold';
         font-size: 16px;
+    }
+    .secondpage-sign {        
+        margin-left: -22px; 
+        margin-top: 0px;
+    }
+    .thankyouText {
+        font-size: 9px;
+    }
+    .thankyouNumber {
+        font-size: 18px;
     }
 
 }

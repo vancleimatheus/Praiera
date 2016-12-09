@@ -63,8 +63,10 @@ app.factory('cartService', ['$http', 'serviceBase', 'mainService',
                 if (lsTest() === true)
                     _savedCart = localStorage.getItem('praiera_Cart');
 
-                if (_savedCart !== null)
+                if (_savedCart !== null) {
                     _productsCart = JSON.parse(_savedCart);
+                    _updateCart(_productsCart);
+                }
             }
 
             return _productsCart;

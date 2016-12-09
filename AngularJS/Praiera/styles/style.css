@@ -10,6 +10,12 @@ body{padding:0px; margin:0px !important}
   box-sizing: border-box;
 }
 
+.nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .kitPraiera {
   display: block;
   padding-left: 15px;

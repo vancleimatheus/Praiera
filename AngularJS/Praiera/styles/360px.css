@@ -1,0 +1,14 @@
+﻿@media screen and (max-width: 360px) {
+    .bottomThinLT {
+        font-size: 15px;
+    }
+    .secondpage-sign {
+        margin-top: -0px;
+    }
+    .thankyouText {
+        font-size: 10px;
+    }
+    .thankyouNumber {
+        font-size: 19px;
+    }
+}

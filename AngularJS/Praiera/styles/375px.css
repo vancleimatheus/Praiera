@@ -25,7 +25,6 @@
         margin-left: 0px;
     }
 	.row.first-neg-btn {
-        top: 109px;
         width: inherit;
     }
      .footer-price
@@ -91,5 +90,14 @@
     .btn1 {
 	        margin-left: -15px;
 	
+    }
+    .bottomThinLT {
+        font-size: 15px;
+    }
+        .thankyouText {
+        font-size: 10px;
+    }
+    .thankyouNumber {
+        font-size: 19px;
     }
 }

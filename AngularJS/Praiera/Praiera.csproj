@@ -108,6 +108,7 @@
     <Content Include="app\views\FirstStep.html" />
     <Content Include="img\fundo_obrigado.jpg" />
     <Content Include="img\ico_carregador.png" />
+    <Content Include="styles\360px.css" />
     <Content Include="styles\425px.css" />
     <Content Include="styles\375px.css" />
     <Content Include="styles\320px.css" />

@@ -17,12 +17,12 @@ app.controller('ThirdStepController', ['$scope', '$location', '$filter', '$uibMo
         }
 
         $scope.previousStep = function () {
-            $location.path('secondstep');
+            $location.path('firststep');
         }
 
         $scope.Save = function () {            
             cartService.saveToDB($scope.buyerInfo).then(function () {
-                $scope.showAlert('Seu pedido foi registrado, obrigado!');
+                $location.path('thankyou')
             }).catch(function (data) {
                 $scope.showAlert('Infelizmente houve um erro ao fazer o pedido. Por favor tente novamente.');
                 console.log(data);

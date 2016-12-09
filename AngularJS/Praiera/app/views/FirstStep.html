@@ -25,7 +25,7 @@
                         <button class="btn" ng-click="Decrease(product)">-</button>
                     </div>
                     <div class="col-md-5 col-xs-5 col-lg-5 col-xl-5 inputDiv">
-                        <input class="btn 1 first-page-input" type="number" ng-model="product.qty" min="0" ng-change="updateCart()" />
+                        <input class="first-page-input inputControl " type="number" ng-model="product.qty" min="0" ng-change="updateCart()" />
                     </div>
                     <div class="col-md-3 col-xs-3 col-lg-3 col-xl-3 plusDiv">
                         <button class="btn" ng-click="Increase(product)">+</button>
@@ -48,9 +48,9 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row rowHeader">
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer1" ng-click="showCart()" style="cursor: pointer">
-            <img src="img/bt_carrinho.png" class="img img-responsive footer-img">
+            <img src="img/bt_carrinho.png" class="img img-responsive footer-img imgCarrinho">
             <p class="footer-text" ng-cloak>Valor total <br> <strong class="footer-price">{{model.total | currency:"R$":2}}</strong></p>
         </div>
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="nextStep()" style="cursor: pointer">

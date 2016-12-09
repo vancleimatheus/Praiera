@@ -15,6 +15,22 @@ body{padding:0px; margin:0px !important}
   padding-left: 15px;
   text-indent: -15px;
 }
+.imgCarrinho {
+    padding-top: 0px;
+}
+
+.inputControl {
+    border-radius: 1px;
+    font-family: Courier New;
+    color: #808080;
+    font-size: 22px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
 
 input[type="checkbox"]{
   width: 25px;
@@ -35,6 +51,65 @@ input[type="checkbox"]{
     position: relative;
     border-radius: 5px;
 }
+
+.thankyouPadding {
+    padding-top: 100px !important;
+    padding-bottom: 25px;
+}
+.thankyouBox {
+    width: 73%;
+    background-color: #D79719;
+    color: #013A41;
+    height: auto;
+    margin: 0 auto;    
+    position: relative;
+    border-radius: 5px;
+    font-size: 16px;
+    overflow: auto;
+    padding: 10px;
+    margin-bottom: 25px;
+    font-family: 'Roboto-Bold';
+}
+.thankyouStrong {
+    font-family: 'Roboto-Bold';       
+    margin-top: 0px;
+    font-size: 50px
+}
+.thankyouLight {
+    font-family: 'Roboto-Thin';       
+    margin-top: 0px;
+    font-size: 30px
+}
+.thankyoufooter
+{
+	background-color: #013A41;
+    color: #D79719;
+	padding-top:20px;
+    padding-bottom: 18px;
+}
+.thankyouText {
+    color: white;
+}
+.thankyouNumber {
+    font-family: 'Roboto-Bold';
+    font-size: 28px
+}
+.thankyouFooter1
+{
+    font-family: 'Roboto-Black';
+    color: #BF7F01;
+    font-size: 22px;    
+    padding-left: 30px;
+}
+.thankyouFooter2
+{
+    color: white;
+    font-family: 'Roboto-Thin';
+    font-size: 22px;    
+    padding-left: 30px;
+}
+
+
 
 .rowHeader {
   display: -webkit-box;
@@ -69,6 +144,8 @@ input[type="checkbox"]{
     background-image: -o-linear-gradient(top, #4D7479, #043945);
     background-image: linear-gradient(to bottom, #4D7479, #043945);
     border-width: 1px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .thirdpage-title {
@@ -88,6 +165,7 @@ input[type="checkbox"]{
 	font-size: 19px;
 	background:#013A41;
     border-width: 1px;
+    font-family: 'Roboto-Bold';
 }
 
 .dialogButton {
@@ -107,7 +185,7 @@ input[type="checkbox"]{
 
 
 input[type="number"] {
-    width: 83px;
+    width: 90px;
     text-align: center;
     border: none;
     border-radius: 5px;
@@ -126,7 +204,7 @@ a {
     border-radius: inherit;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    padding-left: 30px;
+    padding-left: 10px;
     font-size: 12pt;
     font-family: 'Roboto', sans-serif;
 }
@@ -152,8 +230,31 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 98%
+}
+
+.bottomDiv1 {
+    display: flex;
+    align-items: center;
+    width: 98%
+}
+.bottomDiv2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     width: 95%
 }
+.bottomThin {
+    color: white;
+    font-family: 'Roboto-Thin';
+    font-size: 20px;
+}
+.bottomBold {
+    color: white;
+    font-family: 'Roboto-Bold';
+    font-size: 20px;
+}
+
 
 .menu-opener, .menu-opener:hover, .menu-opener.active, .menu-opener-inner, .menu-opener-inner::before, .menu-opener-inner::after, .menu, .menu.active {
   -webkit-transition: 250ms all;
@@ -482,7 +583,7 @@ body { margin-top: 3em; background: #eee; color: #555; font-family: 'Roboto', sa
 .first-neg-btn
 {
 	position: absolute;
-    bottom: -7px;
+    bottom: 2px;
 }
 .inputDiv {
     padding-right: 5px;
@@ -507,7 +608,7 @@ body { margin-top: 3em; background: #eee; color: #555; font-family: 'Roboto', sa
 }
 .amount
 {
-	font-size:17px;
+	font-size:30px;
 }
 .close-btn {
 	color:white;
@@ -598,7 +699,7 @@ body { margin-top: 3em; background: #eee; color: #555; font-family: 'Roboto', sa
 {
 	background-color:#613301;
 	padding-top:20px;
-	    padding-bottom: 10px;
+    padding-bottom: 18px;
 }
 .footer-img
 {
@@ -774,11 +875,11 @@ body { margin-top: 3em; background: #eee; color: #555; font-family: 'Roboto', sa
 			  border-radius: 5px;
 			  font-family: Courier New;
 			  color: #808080;
-			  font-size: 12px;
+			  font-size: 20px;
 			  padding-top: px;
-			  padding-right: 24px;
+			  padding-right: 20px;
 			  padding-bottom: px;
-			  padding-left: 24px;
+			  padding-left: 20px;
 			  text-decoration: none;
 			}
 			.btn1 {
@@ -841,100 +942,4 @@ body { margin-top: 3em; background: #eee; color: #555; font-family: 'Roboto', sa
 }
 
 }
-@media screen and (max-width: 375px) {
-.btn {
-    background: #EAEBEF;
-    background-image: -webkit-linear-gradient(top, #EAEBEF, #CCD5DC);
-    background-image: -moz-linear-gradient(top, #EAEBEF, #CCD5DC);
-    background-image: -ms-linear-gradient(top, #EAEBEF, #CCD5DC);
-    background-image: -o-linear-gradient(top, #EAEBEF, #CCD5DC);
-    background-image: linear-gradient(to bottom, #EAEBEF, #CCD5DC);
-    -webkit-border-radius: 5;
-    -moz-border-radius: 5;
-    border-radius: 5px;
-    font-family: Courier New;
-    color: #808080;
-    font-size: 12px;
-    padding-top: px;
-    padding-right: 10px;
-    padding-bottom: px;
-    padding-left: 10px;
-    text-decoration: none;
-}
-.btn1 {
-	    margin-left: -15px;
-	
-}
-}
-@media screen and (max-width: 320px) {
-	input[type="number"] {
-        width: 60px;
-	}
-    .inputDiv {
-        padding-right: 0px;
-        padding-left: 7px;
-    }
-    .plusDiv {
-        padding-left: 0px;
-        margin-left: -2px;
-    }
-	.row.first-neg-btn {
-        top: 88px;
-        width: inherit;
-    }
-    .footer2
-	{
-		background-color:#613301;
-		padding-top:24px;
-			padding-bottom: 25px;
-	}
-     .footer-text
-    {
-        color: white;
-        font-family: 'Roboto-Thin';
-        font-size: 18px;
-        padding-top: 10px;
-        float: left;
-        padding-left: 10px;
-    }
-    .footer-text1
-    {
-        font-family: 'Roboto-Black';
-        color: white;
-        font-size: 16px;
-        padding-top: 0px;
-        float: left;
-        padding-left: 10px;
-    }
-    .footer-text2
-    {
-        font-family: 'Roboto-Thin';
-        color: white;
-        font-size: 16px;
-    }
 
-
-.btn {
-    background: #EAEBEF;
-    background-image: -webkit-linear-gradient(top, #EAEBEF, #CCD5DC);
-    background-image: -moz-linear-gradient(top, #EAEBEF, #CCD5DC);
-    background-image: -ms-linear-gradient(top, #EAEBEF, #CCD5DC);
-    background-image: -o-linear-gradient(top, #EAEBEF, #CCD5DC);
-    background-image: linear-gradient(to bottom, #EAEBEF, #CCD5DC);
-    -webkit-border-radius: 5;
-    -moz-border-radius: 5;
-    border-radius: 5px;
-    font-family: Courier New;
-    color: #808080;
-    font-size: 12px;
-    padding-top: px;
-    padding-right: 10px;
-    padding-bottom: px;
-    padding-left: 10px;
-    text-decoration: none;
-}
-.btn1 {
-	    margin-left: -15px;
-	
-}
-}

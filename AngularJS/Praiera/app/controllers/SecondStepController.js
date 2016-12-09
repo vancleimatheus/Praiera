@@ -8,9 +8,6 @@ app.controller('SecondStepController', ['$scope', '$location', '$filter', '$uibM
             total: cartService.getTotal()
         }
 
-        if ($scope.productsCart.length === 0) {
-            $scope.previousStep();
-        }
 
         $scope.previousStep = function () {
             $location.path('firststep');
@@ -22,6 +19,10 @@ app.controller('SecondStepController', ['$scope', '$location', '$filter', '$uibM
 
         function nextStep_callback() {
             $location.path('thirdstep');
+        }
+
+        if (!$scope.productsCart || $scope.productsCart.length === 0) {
+            $scope.previousStep();
         }
     }
 ]);

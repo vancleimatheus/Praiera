@@ -92,6 +92,7 @@
     <Content Include="app\components\ng-dialog\ngDialog-theme-default.min.css" />
     <Content Include="app\components\ng-dialog\ngDialog.min.css" />
     <Content Include="app\components\ng-dialog\ngDialog.min.js" />
+    <Content Include="app\controllers\ThankYouController.js" />
     <Content Include="app\controllers\ThirdStepController.js" />
     <Content Include="app\controllers\SecondStepController.js" />
     <Content Include="app\controllers\FirstStepController.js" />
@@ -101,9 +102,15 @@
     <Content Include="app\services\cartService.js" />
     <Content Include="app\services\productsService.js" />
     <Content Include="app\services\mainService.js" />
+    <Content Include="app\views\ThankYou.html" />
     <Content Include="app\views\ThirdStep.html" />
     <Content Include="app\views\SecondStep.html" />
     <Content Include="app\views\FirstStep.html" />
+    <Content Include="img\fundo_obrigado.jpg" />
+    <Content Include="img\ico_carregador.png" />
+    <Content Include="styles\425px.css" />
+    <Content Include="styles\375px.css" />
+    <Content Include="styles\320px.css" />
     <Content Include="styles\RobotoFont.css" />
     <Content Include="img\bt_back.png" />
     <Content Include="img\bt_carrinho.png" />

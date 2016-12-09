@@ -33,7 +33,12 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/ThirdStep.html"
     });
 
+    $routeProvider.when("/thankyou", {
+        controller: "ThankYouController",
+        templateUrl: "/app/views/ThankYou.html"
+    });
+
     $routeProvider.otherwise({ redirectTo: "/firststep" });
 });
 
-app.constant('serviceBase', { value: 'http://192.168.0.9:50974/' });
+app.constant('serviceBase', { value: 'http://192.168.0.4:50974/' });

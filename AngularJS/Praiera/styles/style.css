@@ -15,10 +15,6 @@ body{padding:0px; margin:0px !important}
   padding-left: 15px;
   text-indent: -15px;
 }
-.imgCarrinho {
-    padding-top: 0px;
-}
-
 .inputControl {
     border-radius: 1px;
     font-family: Courier New;
@@ -249,8 +245,18 @@ a {
     font-family: 'Roboto-Thin';
     font-size: 20px;
 }
+.bottomThinLT {
+    color: white;
+    font-family: 'Roboto-Thin';
+    font-size: 20px;
+}
 .bottomBold {
     color: white;
+    font-family: 'Roboto-Bold';
+    font-size: 20px;
+}
+.bottomBoldYellow {
+    color: #d69719;
     font-family: 'Roboto-Bold';
     font-size: 20px;
 }
@@ -698,8 +704,8 @@ body { margin-top: 3em; background: #eee; color: #555; font-family: 'Roboto', sa
 .footer2
 {
 	background-color:#613301;
-	padding-top:20px;
-    padding-bottom: 18px;
+	padding-top:10px;
+    padding-bottom: 10px;
 }
 .footer-img
 {

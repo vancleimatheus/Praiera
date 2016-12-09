@@ -49,12 +49,16 @@
     </div>
     <div class="row rowHeader">
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="previousStep()" style="cursor: pointer; background-color: #734200">
-            <img src="img/bt_back.png" class="img img-responsive footer-img">
-            <p class="footer-text" style="padding-top: 20px; font-size: 17px">Ops, esqueci algo <br> <strong class="footer-price">VOLTAR</strong></p>
+            <div class="bottomDiv1">
+                <img src="img/bt_back.png" class="img img-responsive footer-img">
+                <span class="bottomThinLT" style="padding-left:5px">Ops, esqueci algo <br> <span class="bottomBoldYellow">VOLTAR</span></span>                
+            </div>
         </div>
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="nextStep()" style="cursor: pointer">
-            <p class="footer-text1"><strong>CONFIRMAR</strong><br> <span class="footer-price">PEDIDO!</span></p>
-            <img src="img/bt_next.png" class="img img-responsive footer-img1">
+            <div class="bottomDiv2">
+                <span class="bottomBold">CONFIRMAR <br> <span class="bottomBoldYellow">PEDIDO!</span></span>                
+                <img src="img/bt_next.png" class="img img-responsive footer-img1">
+            </div>
         </div>
     </div>
 </div>

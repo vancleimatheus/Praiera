@@ -50,13 +50,16 @@
     </div>
     <div class="row rowHeader">
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer1" ng-click="showCart()" style="cursor: pointer">
-            <img src="img/bt_carrinho.png" class="img img-responsive footer-img imgCarrinho">
-            <p class="footer-text" ng-cloak>Valor total <br> <strong class="footer-price">{{model.total | currency:"R$":2}}</strong></p>
+            <div class="bottomDiv1">
+                <img src="img/bt_carrinho.png" class="img img-responsive footer-img">
+                <span class="bottomThin" style="padding-left:5px">Valor total <br> <span class="bottomBoldYellow">{{model.total | currency:"R$":2}}</span></span>                
+            </div>
         </div>
         <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6 footer2" ng-click="nextStep()" style="cursor: pointer">
-            <span class="footer-text1">FINALIZAR</><br /> 
-            <span class="footer-text2">PEDIDO!</span></span>
-            <img src="img/bt_next.png" class="img img-responsive footer-img1">
+            <div class="bottomDiv2">                
+                <span class="bottomBold">FINALIZAR <br> <span class="bottomThin">PEDIDO!</span></span>
+                <img src="img/bt_next.png" class="img img-responsive footer-img1">
+            </div>
         </div>
     </div>    
 </div>

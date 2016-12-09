@@ -16,9 +16,6 @@
         padding-left: 10px;
         text-decoration: none;
     }
-    .imgCarrinho {
-        padding-top: 8px;
-    }
     .footer-img1
 	{
 		margin-top: -2px;
@@ -39,14 +36,14 @@
     .footer1
     {
 	    background-color:#734200;
-	    padding-top:13px;
+	    padding-top:10px;
 	    padding-bottom:10px;
     }
    .footer2
 	{
 		background-color:#613301;
-		padding-top:24px;
-	    padding-bottom: 17px;
+		padding-top:10px;
+	    padding-bottom: 10px;
 	}
      .footer-text
     {

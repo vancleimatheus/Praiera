@@ -20,13 +20,34 @@ app.controller('ThirdStepController', ['$scope', '$location', '$filter', '$uibMo
             $location.path('firststep');
         }
 
-        $scope.Save = function () {            
-            cartService.saveToDB($scope.buyerInfo).then(function () {
-                $location.path('thankyou')
-            }).catch(function (data) {
-                $scope.showAlert('Infelizmente houve um erro ao fazer o pedido. Por favor tente novamente.');
-                console.log(data);
-            });
+        $scope.Save = function () {
+            if (isValid()) {
+                cartService.saveToDB($scope.buyerInfo).then(function () {
+                    $location.path('thankyou')
+                }).catch(function (data) {
+                    $scope.showAlert('Infelizmente houve um erro ao fazer o pedido. Por favor tente novamente.');
+                    console.log(data);
+                });
+            }
+        }
+
+        function isValid() {
+            if ($scope.buyerInfo.name.trim() === '') {
+                $scope.showAlert('Por favor, digite seu nome.');
+                return false;
+            }
+
+            if ($scope.buyerInfo.phone) {
+                if ($scope.buyerInfo.phone.length < 11) {
+                    $scope.showAlert('Por favor, digite seu número de telefone completo com o DDD.');
+                    return false;
+                }
+            } else {
+                $scope.showAlert('Por favor, digite seu número de telefone.');
+                return false;
+            }
+                               
+            return true;
         }
     }
 ]);

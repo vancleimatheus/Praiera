@@ -1,1 +1,9 @@
-﻿
+﻿@media screen and (max-width: 412px) {
+    .thankyouText {
+        font-size: 12px;
+    }
+    .thankyouNumber {
+        font-size: 23px;
+    }
+
+}

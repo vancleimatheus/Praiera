@@ -22,9 +22,15 @@
 </head>
 <body>
     <div class="container-fluid" ng-controller="IndexController">
+        <div id="mydiv" data-loading>
+            <div class="ajax-loader">
+                <p class="bottomThin">Aguarde, processando...</p>
+                <img src="img/loading.gif" />
+            </div>
+        </div>
 		<div class="wraper">
             <div class="header row rowHeader">
-                <div style="margin-top: 20px; width:16%">
+                <div style="margin-top: 20px; width:15.8%">
                     <a href="#menu" id="toggle"><span></span></a>
                     <div id="menu">
                         <ul>
@@ -53,6 +59,7 @@
 </html>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBi6SNPJ14_iHhzKmjXAESYWO6xe7MmfCo" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular-sanitize.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular-route.min.js"></script>

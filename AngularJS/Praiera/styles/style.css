@@ -11,24 +11,26 @@ body{padding:0px; margin:0px !important}
 }
 
 #mydiv {  
-    position:absolute;
+    position: fixed;
     top:0;
     left:0;
-    width:100%;
+    right: 0;
+    bottom: 0;
     height:100%;
     z-index:1000;
-    background-color:grey;
-    opacity: .8;
-    display: none;
+    background-color: rgba(50,50,50,0.8);
  }
 
 .ajax-loader {
     position: absolute;
-    left: 50%;
+    left: 33%;
     top: 50%;
     margin-left: -32px; /* -1 * image width / 2 */
     margin-top: -32px;  /* -1 * image height / 2 */
     display: block;     
+    text-align: center;
+    background-color: #03484F;    
+    padding: 10px;
 }
 
 .nowrap {
@@ -729,6 +731,10 @@ body { margin-top: 3em; background: #eee; color: #555; font-family: 'Roboto', sa
   background-image: -o-linear-gradient(top, #0D414F, #416C72);
   background-image: linear-gradient(to bottom, #0D414F, #416C72);
   text-decoration: none;
+}
+.noSideMargins {
+    margin-left: 0px; 
+    margin-right:0px;
 }
 .footer1
 {

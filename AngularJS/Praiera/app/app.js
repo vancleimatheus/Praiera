@@ -32,9 +32,9 @@ app.directive('loading', ['$http', function ($http) {
 
             scope.$watch(scope.isLoading, function (v) {
                 if (v) {
-                    scope.isProcessing = true;
+                    elm.show();
                 } else {
-                    scope.isProcessing = false;
+                    elm.hide();
                 }
             });
         }

@@ -148,6 +148,7 @@ input[type="checkbox"]{
   display: -ms-flexbox;
   display:         flex;
   flex-wrap: wrap;
+  background-color: #613301;
 }
 .rowHeader > [class*='col-'] {
   flex-direction: column;

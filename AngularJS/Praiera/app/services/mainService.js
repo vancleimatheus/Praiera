@@ -18,8 +18,17 @@ app.factory('mainService', ['$http', 'serviceBase',
 
         };
 
+        var _sendMessage = function(contactInfo) {
+
+            return $http.post(serviceBase.value + 'api/main/sendcontact/', contactInfo).then(function (response) {
+                return response;
+            });
+
+        }
+
         service.appState = appState;
         service.GetConfig = _getConfig;
+        service.SendMessage = _sendMessage;
 
         return service;
     }

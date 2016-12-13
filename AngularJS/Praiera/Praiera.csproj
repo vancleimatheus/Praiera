@@ -112,6 +112,10 @@
     <Content Include="app\views\FirstStep.html" />
     <Content Include="img\fundo_obrigado.jpg" />
     <Content Include="img\ico_carregador.png" />
+    <Content Include="img\img_passo1.png" />
+    <Content Include="img\img_passo2.png" />
+    <Content Include="img\img_passo3.png" />
+    <Content Include="img\img_passo4.png" />
     <Content Include="Index.aspx" />
     <Content Include="styles\360px.css" />
     <Content Include="styles\425px.css" />

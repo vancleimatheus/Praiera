@@ -3,6 +3,8 @@ using System.Web.Http;
 using PraieraAPI.Models;
 using System.Data.SqlClient;
 using System;
+using System.Net.Mail;
+using System.Configuration;
 
 namespace PraieraAPI.Controllers
 {
@@ -52,7 +54,26 @@ namespace PraieraAPI.Controllers
 
                     cmd.ExecuteNonQuery();
                 }
-                
+
+                var subject = "Novo pedido " + purchase.id;
+                var body = "Novo pedido solicitado, favor verificar\n\n\nPurchase Id: " + purchase.id +
+                                "\nLongitude: " + purchase.longitude +
+                                "\nLatitude: " + purchase.latitude +
+                                "\nObservações: " + purchase.comments +
+                                "\nNome: " + purchase.name +
+                                "\nTelefone: " + purchase.phone + "\n\n--- Produtos ---\n\n";
+
+                cmd.CommandText = "select p.Name, p.Type, p.Capacity, p.Price, pp.Quantity from products p inner join purchase_products pp on(pp.product_id = p.id) where pp.purchase_id = '" + purchase.id + "'";
+                var dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    var capacity = dr.IsDBNull(2) ? "" : dr.GetString(2);
+                    body += dr.GetString(0) + " " + dr.GetString(1) + " " + capacity + " - Preço: " + dr.GetDecimal(3).ToString() + " - Quantidade: " + dr.GetInt32(4).ToString() + "\n";
+                }
+
+                Utils.Mail.sendMail(ConfigurationManager.AppSettings["purchaseEmail"], subject, body);
+
             }
             catch(Exception e)
             {

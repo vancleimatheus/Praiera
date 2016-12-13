@@ -42,10 +42,10 @@
                         </ul>
                     </div>
                 </div>
-                <div style="text-align:center; width: 59%">
+                <div style="text-align:center; width: 58%" ng-click="goHome()">
                     <span class="helper"></span><img src="img/logo_Praiera_transp.png" class="img img-responsive">
                 </div>
-                <div class="radio-btn" style="padding-left: 5px;padding-right: 5px; width: 25%" ng-cloak>
+                <div class="radio-btn" style="padding-left: 0px;padding-right: 0px; width: 23%" ng-cloak>
                     <img ng-src="{{shopStatus.image}}" class="img img-responsive">
                     <p class="radio-text" style="font-size: 8px;" ng-show="shopStatus.isOnline">ESTAMOS<br /> ENTREGANDO</p>
                     <p class="radio-text" style="font-size: 8px;" ng-show="!shopStatus.isOnline">FECHADO.<br /> RETORNO: 10h</p>

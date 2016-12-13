@@ -36,7 +36,9 @@
                     <a href="#menu" id="toggle"><span></span></a>
                     <div id="menu">
                         <ul>
-                            <li><a href="#home">Início</a></li>
+                            <li ng-click="goHome()"><a>INÍCIO</a></li>
+                            <li ng-click="goHow()"><a>COMO FUNCIONA?</a></li>
+                            <li ng-click="goContact()" style="border-bottom: none"><a>CONTATO</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,6 +67,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular-sanitize.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular-touch.js"></script>
 <script src="js/ui-bootstrap-tpls-2.3.0.min.js"></script>
 <script src="app/components/angular-locale_pt-br.js" charset="utf-8"></script>
 <script src="app/app.js?v=2"></script>
@@ -76,6 +79,7 @@
 <script src="app/controllers/SecondStepController.js?v=2" charset="utf-8"></script>
 <script src="app/controllers/ThirdStepController.js?v=2" charset="utf-8"></script>
 <script src="app/controllers/ThankYouController.js?v=2" charset="utf-8"></script>
+<script src="app/controllers/HowController.js?v=2" charset="utf-8"></script>
 <script src="js/angular-growl.min.js"></script>
 <script src="app/components/ng-dialog/ngDialog.min.js"></script>
 
@@ -139,4 +143,13 @@
 
     //alert(getWidth());
 </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-88926317-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

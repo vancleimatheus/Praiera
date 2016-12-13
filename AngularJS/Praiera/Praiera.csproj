@@ -92,6 +92,7 @@
     <Content Include="app\components\ng-dialog\ngDialog-theme-default.min.css" />
     <Content Include="app\components\ng-dialog\ngDialog.min.css" />
     <Content Include="app\components\ng-dialog\ngDialog.min.js" />
+    <Content Include="app\controllers\HowController.js" />
     <Content Include="app\controllers\ThankYouController.js" />
     <Content Include="app\controllers\ThirdStepController.js" />
     <Content Include="app\controllers\SecondStepController.js" />
@@ -102,6 +103,8 @@
     <Content Include="app\services\cartService.js" />
     <Content Include="app\services\productsService.js" />
     <Content Include="app\services\mainService.js" />
+    <Content Include="app\views\ContactUs.html" />
+    <Content Include="app\views\How.html" />
     <Content Include="app\views\ThankYou.html" />
     <Content Include="app\views\ThirdStep.html" />
     <Content Include="app\views\SecondStep.html" />

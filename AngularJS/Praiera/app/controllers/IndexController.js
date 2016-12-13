@@ -25,5 +25,20 @@ app.controller('IndexController', ['$scope', '$location', '$window', 'mainServic
             if ($location.absUrl().indexOf('localhost') == -1)
                 $window.ga('send', 'pageview', { page: $location.url() });
         });
+
+        $scope.goHome = function () {
+            document.getElementById('toggle').click();
+            $location.path('firststep');
+        }
+
+        $scope.goHow = function () {
+            document.getElementById('toggle').click();
+            $location.path('howitworks');
+        }
+
+        $scope.goContact = function () {
+            document.getElementById('toggle').click();
+            $location.path('contactus');
+        }
     }
 ]);

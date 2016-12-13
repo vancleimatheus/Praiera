@@ -1,0 +1,32 @@
+﻿<style>
+    .carousel-indicators {
+        bottom: -40px !important;
+    }
+</style>
+<div class="row" style="background-color: #012C32">  
+    <div class="row headingPadding">
+        <div class="col-md-12 first-heading">
+            <h3 style="color:white">Como funciona?</h3>
+        </div>
+    </div>  
+    <div class="row" style="padding:20px !important">
+        <div class="col-md-12 first-heading" style="color: white">
+            <div style="height: 305px">
+                <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                    <div uib-slide ng-repeat="slide in slides track by slide.id" index="$index">
+                        <img ng-src="{{slide.image}}" style="margin:auto;">
+                        <div class="carousel-caption">
+                            <p>{{slide.text}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div class="row" style="margin-top:85px; color: white">
+                <span style="font-family='Roboto-Thin'">
+                    <small>* Por enquanto entregamos apenas no bairro Ingleses em Florianópolis, SC.</small>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+

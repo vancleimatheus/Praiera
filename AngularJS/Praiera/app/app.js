@@ -1,4 +1,4 @@
-﻿var app = angular.module('Praiera', ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'ngDialog']);
+﻿var app = angular.module('Praiera', ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'ngDialog', 'ngTouch']);
 
 app.run(function ($rootScope, ngDialog) {
     $rootScope.isProcessing = false;
@@ -63,6 +63,16 @@ app.config(function ($routeProvider) {
     $routeProvider.when("/thankyou", {
         controller: "ThankYouController",
         templateUrl: "/app/views/ThankYou.html"
+    });
+
+    $routeProvider.when("/howitworks", {
+        controller: "HowController",
+        templateUrl: "/app/views/how.html"
+    });
+
+    $routeProvider.when("/contactus", {
+        controller: "ContactUsController",
+        templateUrl: "/app/views/ContactUs.html"
     });
 
     $routeProvider.otherwise({ redirectTo: "/firststep" });

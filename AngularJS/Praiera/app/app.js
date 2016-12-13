@@ -3,7 +3,7 @@
 app.run(function ($rootScope, ngDialog) {
     $rootScope.isProcessing = false;
     $rootScope.showAlert = function (message, callback, buttonCaption) {
-        var caption = "Fechar";
+        var caption = "&nbsp;&nbsp;&nbsp;Ok&nbsp;&nbsp;&nbsp;";
 
         if (buttonCaption)
             caption = buttonCaption;

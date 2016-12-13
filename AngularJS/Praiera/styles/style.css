@@ -251,10 +251,8 @@ a {
 
 .pmodal-footer {
     padding: 15px;
-    text-align: right;
     border-top: 5px solid #d69719;
     align-items: center;
-    padding-left: 30px;
     color: #734100
 }
 
@@ -262,7 +260,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 98%
+    width: 95%
 }
 
 .bottomDiv1 {
@@ -603,7 +601,7 @@ body { margin-top: 3em; background: #eee; color: #555; font-family: 'Roboto', sa
   -webkit-border-radius: 5;
   -moz-border-radius: 5;
   border-radius: 5px;
-  font-family: Courier New;
+  font-family: 'Roboto-Bold';
   color: #808080;
   font-size: 22px;
   font-weight:bold;

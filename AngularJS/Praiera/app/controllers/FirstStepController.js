@@ -106,7 +106,7 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                 } else {
                     $scope.model.noMoreProducts = true;
 
-                    $scope.showAlert('Exibindo todos os produtos');
+                    $scope.showAlert('Todos os produtos já estão sendo exibidos.');
                 }
 
                 $scope.updateCart();

@@ -1,10 +1,10 @@
 ﻿<div class="pmodal-header">
-    <div class="justified-content">
-        <div>
+    <div class="row">
+        <div class="col-md-10 col-xs-10 col-lg-10 col-xl-10">
             <img src="../../img/ico_carrinho.png" class="img img-responsive" style="height:35px" />
             <strong>SEU CARRINHO</strong>
         </div>
-        <div>
+        <div class="col-md-2 col-xs-2 col-lg-2 col-xl-2" style="margin-top: 5px;">
             <span ng-click="$ctrl.cancel()"><strong>x</strong></span>
         </div>
     </div>
@@ -14,19 +14,21 @@
         &nbsp;
     </div>
     <div class="row" ng-repeat="product in $ctrl.productsCart">
-        <strong>{{product.name}}</strong><br />
-        <small>{{product.type}} {{product.capacity}}</small><br />
-        <div class="justified-content" style="width: 90%">
-            <div><small>{{product.qty}} Un X {{product.price | currency:"R$":2}}</small></div>
-            <div><strong>{{product.price * product.qty | currency:"R$":2}}</strong></div>
+        <div class="row">
+            <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6"><strong>{{product.name}}</strong></div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6"><small>{{product.type}} {{product.capacity}}</small></div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6"><small>{{product.qty}} Un X {{product.price | currency:"R$":2}}</small></div>
+            <div class="col-md-5 col-xs-5 col-lg-5 col-xl-5" style="text-align:right"><strong>{{product.price * product.qty | currency:"R$":2}}</strong></div>
         </div>
     </div>
 </div>
 <div class="pmodal-footer">
-    <div class="row">
-        <div class="justified-content" style="font-size: 18px">
-            <div><strong>TOTAL</strong></div>
-            <div><strong>{{$ctrl.currentTotal | currency:"R$":2}}</strong></div>
-        </div>
+    <div class="row" style="font-size: 18px">
+        <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6"><strong>TOTAL</strong></div>
+        <div class="col-md-6 col-xs-6 col-lg-6 col-xl-6" style="text-align:right"><div><strong>{{$ctrl.currentTotal | currency:"R$":2}}</strong></div></div>
     </div>
 </div>

@@ -1,33 +1,52 @@
-﻿<div class="row" style="background: url(../../img/fundo_obrigado.jpg); background-size: contain">    
-    <div class="row thankyouPadding">
-        <div class="col-md-12 first-heading" style="color: white">
-            <span class="thankyouStrong">Obrigado</span><br />
-            <span class="thankyouLight">
-                &nbsp;&nbsp;
-            </span>
+﻿<div class="row" style="background-color: #012C32;background: url(../../img/fundo_obrigado.jpg); background-size: contain">
+    <div class="row headingPadding">
+        <div class="col-md-12 first-heading">
+            <h3 style="color:white">Fale Conosco</h3>
+            <div style="color:white">
+                contato@praiera.com<br />
+                <span class="thankyouNumber">(48) 98822-6306</span>
+            </div>
         </div>
     </div>
-    <div class="row" style="padding-top:15px; padding-bottom: 15px">
-        <div class="thankyouBox rowHeader">
-            <div class="col-md-4 col-xs-4 col-lg-4 col-xl-4">
-                <span class="helper"></span><img src="../../img/ico_carregador.png" class="img img-responsive" />
-            </div>
-            <div class="col-md-8 col-xs-8 col-lg-8 col-xl-8">                
-                SEU PEDIDO FOI RECEBIDO E JÁ ESTÁ SENDO PREPARADO PARA ENTREGA.
+    <div class="row" style="padding:20px !important">
+        <div class="col-md-12 first-heading" style="color: white">
+            <div class="secondpage-mainbox" style="margin-top:15px; margin-bottom: 15px; overflow: auto; padding: 10px">
+                <div class="pmodal-body" style="margin-left: 0px; text-align: left">
+                    <div>
+                        <div class="col-lg-12 col-md-12 col-xs-12 col-xl-12''">
+                            <div class="thirdpage-title">NOME</div>
+                            <input type="text" class="form-control" ng-model="contactInfo.name" />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-xs-12 col-xl-12">
+                            <div class="thirdpage-title">TELEFONE</div>
+                            <input type="tel" class="form-control" ng-model="contactInfo.phone" />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-xs-12 col-xl-12">
+                            <div class="thirdpage-title">EMAIL</div>
+                            <input type="email" class="form-control" ng-model="contactInfo.email" />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-xs-12 col-xl-12">
+                            <div class="thirdpage-title">MENSAGEM</div>
+                            <textarea class="form-control" ng-model="contactInfo.message" rows="3"></textarea>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-xs-12 col-xl-12">
+                            <div class="thirdpage-title" style="text-transform:none">Gostaria de sugerir mais produtos? Quais?</div>
+                            <input type="tel" class="form-control" ng-model="contactInfo.suggestion" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="row rowHeader noSideMargins">
-        <div class="footer2" ng-click="homePage()" style="cursor: pointer; background-color: #734200; width: 49.8%">
+        <div class="footer2" style="background-color: #734200; width: 49.8%">
             <div class="bottomDiv1">
-                <img src="img/bt_back.png" class="img img-responsive footer-img">
-                <span class="bottomBold">VOLTAR<br> <span class="bottomThin">PARA INÍCIO</span></span>                
+                &nbsp;
             </div>
         </div>
-        <div class="thankyoufooter" style="cursor: pointer; width: 49.8%">
-            <div class="bottomDiv2">                             
-                <span class="thankyouText">DÚVIDAS? ENTRE EM CONTATO: <br /><span class="thankyouNumber">(48) 98822-6306</span></span>
-            </div>
+        <div class="footer2" ng-click="sendMessage()" style="cursor: pointer; background-color: #734200; width: 50%">
+            <div style="display:inline-block"><span class="bottomBold">ENVIAR <br> <span class="bottomBoldYellow">CONTATO!</span></span></div>
+            <div style="display:initial"><img src="img/bt_next.png" class="img img-responsive footer-img1"></div>
         </div>
     </div>
 </div>

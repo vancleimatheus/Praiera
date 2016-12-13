@@ -80,6 +80,7 @@
 <script src="app/controllers/ThirdStepController.js?v=2" charset="utf-8"></script>
 <script src="app/controllers/ThankYouController.js?v=2" charset="utf-8"></script>
 <script src="app/controllers/HowController.js?v=2" charset="utf-8"></script>
+<script src="app/controllers/ContactUsController.js?v=2" charset="utf-8"></script>
 <script src="js/angular-growl.min.js"></script>
 <script src="app/components/ng-dialog/ngDialog.min.js"></script>
 

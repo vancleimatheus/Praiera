@@ -92,6 +92,7 @@
     <Content Include="app\components\ng-dialog\ngDialog-theme-default.min.css" />
     <Content Include="app\components\ng-dialog\ngDialog.min.css" />
     <Content Include="app\components\ng-dialog\ngDialog.min.js" />
+    <Content Include="app\controllers\ContactUsController.js" />
     <Content Include="app\controllers\HowController.js" />
     <Content Include="app\controllers\ThankYouController.js" />
     <Content Include="app\controllers\ThirdStepController.js" />

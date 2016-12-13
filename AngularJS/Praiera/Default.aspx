@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Praiera.Index" %>
+
+<!DOCTYPE html>
 
 <html lang="pt-br" ng-app="Praiera">
 <head>
@@ -30,18 +32,20 @@
         </div>
 		<div class="wraper">
             <div class="header row rowHeader">
-                <div style="margin-top: 20px; width:15.8%">
+                <div style="margin-top: 20px; width:16%">
                     <a href="#menu" id="toggle"><span></span></a>
                     <div id="menu">
                         <ul>
-                            <li><a href="#home">Início</a></li>
+                            <li ng-click="goHome(true)"><a>INÍCIO</a></li>
+                            <li ng-click="goHow()"><a>COMO FUNCIONA?</a></li>
+                            <li ng-click="goContact()" style="border-bottom: none"><a>CONTATO</a></li>
                         </ul>
                     </div>
                 </div>
-                <div style="text-align:center; width: 59%">
+                <div style="text-align:center; width: 61%" ng-click="goHome()">
                     <span class="helper"></span><img src="img/logo_Praiera_transp.png" class="img img-responsive">
                 </div>
-                <div class="radio-btn" style="padding-left: 5px;padding-right: 5px; width: 25%" ng-cloak>
+                <div class="radio-btn" style="padding-left: 0px;padding-right: 0px; width: 23%" ng-cloak>
                     <img ng-src="{{shopStatus.image}}" class="img img-responsive">
                     <p class="radio-text" style="font-size: 8px;" ng-show="shopStatus.isOnline">ESTAMOS<br /> ENTREGANDO</p>
                     <p class="radio-text" style="font-size: 8px;" ng-show="!shopStatus.isOnline">FECHADO.<br /> RETORNO: 10h</p>
@@ -74,6 +78,8 @@
 <script src="app/controllers/SecondStepController.js?v=2" charset="utf-8"></script>
 <script src="app/controllers/ThirdStepController.js?v=2" charset="utf-8"></script>
 <script src="app/controllers/ThankYouController.js?v=2" charset="utf-8"></script>
+<script src="app/controllers/HowController.js?v=2" charset="utf-8"></script>
+<script src="app/controllers/ContactUsController.js?v=2" charset="utf-8"></script>
 <script src="js/angular-growl.min.js"></script>
 <script src="app/components/ng-dialog/ngDialog.min.js"></script>
 
@@ -136,4 +142,14 @@
     }
 
     //alert(getWidth());
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88926317-1', 'auto');
+  ga('send', 'pageview');
+
 </script>

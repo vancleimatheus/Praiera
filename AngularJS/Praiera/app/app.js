@@ -1,4 +1,4 @@
-﻿var app = angular.module('Praiera', ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'ngDialog', 'ngTouch']);
+﻿var app = angular.module('Praiera', ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'ngDialog']);
 
 app.run(function ($rootScope, ngDialog) {
     $rootScope.isProcessing = false;

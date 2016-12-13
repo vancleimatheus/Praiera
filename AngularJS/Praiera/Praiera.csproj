@@ -108,6 +108,7 @@
     <Content Include="app\views\FirstStep.html" />
     <Content Include="img\fundo_obrigado.jpg" />
     <Content Include="img\ico_carregador.png" />
+    <Content Include="Index.aspx" />
     <Content Include="styles\360px.css" />
     <Content Include="styles\425px.css" />
     <Content Include="styles\375px.css" />
@@ -131,7 +132,7 @@
     <Content Include="img\logo_Praiera_transp.png" />
     <Content Include="img\Offline.png" />
     <Content Include="img\Online.png" />
-    <Content Include="index.html" />
+    <Content Include="nindex.html" />
     <Content Include="js\angular-growl.min.css" />
     <Content Include="js\angular-growl.min.js" />
     <Content Include="js\jquery-1.11.3.min.js" />
@@ -153,6 +154,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

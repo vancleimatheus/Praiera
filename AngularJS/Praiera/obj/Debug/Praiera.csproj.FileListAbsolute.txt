@@ -26,4 +26,3 @@ C:\Projetos\Praiera\AngularJS\Praiera\bin\System.Web.Http.xml
 C:\Projetos\Praiera\AngularJS\Praiera\bin\System.Web.Http.Cors.xml
 C:\Projetos\Praiera\AngularJS\Praiera\obj\Debug\Praiera.dll
 C:\Projetos\Praiera\AngularJS\Praiera\obj\Debug\Praiera.pdb
-C:\Projetos\Praiera\AngularJS\Praiera\obj\Debug\Praiera.csprojResolveAssemblyReference.cache

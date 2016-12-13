@@ -14,7 +14,7 @@ app.controller('SecondStepController', ['$scope', '$location', '$filter', '$uibM
         }
 
         $scope.nextStep = function () {
-            $scope.showAlert('No próximo e último passo iremos obter a sua localização<br/>Por favor clique em "Permitir" quando for solicitada a autorização.', nextStep_callback, "Continuar");            
+            $scope.showAlert('Para o próximo e último passo precisamos da sua localização.<br/>Por favor, clique em "<strong>Permitir</strong>" quando for solicitada a autorização.', nextStep_callback, "&nbsp;&nbsp;&nbsp;Ok, continuar&nbsp;&nbsp;&nbsp;");
         }
 
         function nextStep_callback() {

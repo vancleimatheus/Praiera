@@ -135,7 +135,7 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                     cartService.saveCart();
                     $location.path('/secondstep');
                 } else {
-                    $scope.showAlert('Por favor adicione mais itens, o pedido mínimo é de:' + $filter('currency')(data.minimunPurchase, 'R$', 2));
+                    $scope.showAlert('Por favor adicione mais itens. O pedido mínimo é de: ' + $filter('currency')(data.minimunPurchase, 'R$', 2));
                 }
             } else {
                 $scope.showAlert('Desculpe-nos, não estamos entregando no momento');

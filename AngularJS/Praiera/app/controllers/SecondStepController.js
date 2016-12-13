@@ -1,6 +1,6 @@
 ﻿'use strict';
-app.controller('SecondStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'cartService', 'productsService', 
-    function ($scope, $location, $filter, $uibModal, $document, mainService, cartService, productsService) {
+app.controller('SecondStepController', ['$scope', '$location', '$window', '$filter', '$uibModal', '$document', 'mainService', 'cartService', 'productsService', 
+    function ($scope, $location, $window, $filter, $uibModal, $document, mainService, cartService, productsService) {
         $scope.productsCart = [];
         $scope.kitPraiera = mainService.appState.kitPraiera;
         $scope.productsCart = cartService.getProductsCart();
@@ -24,5 +24,7 @@ app.controller('SecondStepController', ['$scope', '$location', '$filter', '$uibM
         if (!$scope.productsCart || $scope.productsCart.length === 0) {
             $scope.previousStep();
         }
+
+        $window.scrollTo(0, 0);
     }
 ]);

@@ -36,7 +36,7 @@
                     <a href="#menu" id="toggle"><span></span></a>
                     <div id="menu">
                         <ul>
-                            <li ng-click="goHome()"><a>INÍCIO</a></li>
+                            <li ng-click="goHome(true)"><a>INÍCIO</a></li>
                             <li ng-click="goHow()"><a>COMO FUNCIONA?</a></li>
                             <li ng-click="goContact()" style="border-bottom: none"><a>CONTATO</a></li>
                         </ul>

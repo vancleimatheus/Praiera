@@ -1,6 +1,6 @@
 ﻿'use strict';
-app.controller('ThirdStepController', ['$scope', '$location', '$filter', '$uibModal', '$document', 'mainService', 'cartService', 'productsService', 
-    function ($scope, $location, $filter, $uibModal, $document, mainService, cartService, productsService) {
+app.controller('ThirdStepController', ['$scope', '$location', '$window', '$filter', '$uibModal', '$document', 'mainService', 'cartService', 'productsService', 
+    function ($scope, $location, $window, $filter, $uibModal, $document, mainService, cartService, productsService) {
         $scope.title = 'Procurando localização';
 
         $scope.$on('location_found', function (sender, locationName) {
@@ -49,6 +49,8 @@ app.controller('ThirdStepController', ['$scope', '$location', '$filter', '$uibMo
                                
             return true;
         }
+
+        $window.scrollTo(0, 0);
     }
 ]);
 

@@ -26,8 +26,10 @@ app.controller('IndexController', ['$scope', '$location', '$window', 'mainServic
                 $window.ga('send', 'pageview', { page: $location.url() });
         });
 
-        $scope.goHome = function () {
-            document.getElementById('toggle').click();
+        $scope.goHome = function (closeMenu) {
+            if(closeMenu)
+                document.getElementById('toggle').click();
+
             $location.path('firststep');
         }
 

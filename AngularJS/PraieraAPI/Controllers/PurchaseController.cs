@@ -34,13 +34,14 @@ namespace PraieraAPI.Controllers
 
                 purchase.id = System.Guid.NewGuid().ToString();
 
-                cmd.CommandText = "INSERT INTO Purchases (Id, Longitude, Latitude, Comments, Name, Phone, Date) VALUES ('" +
+                cmd.CommandText = "INSERT INTO Purchases (Id, Longitude, Latitude, Comments, Name, Phone, Change, Date) VALUES ('" +
                                 purchase.id + "'," +
                                 purchase.longitude + ", " +
                                 purchase.latitude + ", '" +
                                 purchase.comments + "', '" +
                                 purchase.name + "', '" +
-                                purchase.phone + "', getdate())";
+                                purchase.phone + "'," + 
+                                purchase.change + ", getdate())";
 
                 cmd.ExecuteNonQuery();
 

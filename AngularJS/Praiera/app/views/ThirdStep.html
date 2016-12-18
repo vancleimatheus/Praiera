@@ -35,8 +35,12 @@
                         <input type="text" class="form-control" ng-model="buyerInfo.name" />
                     </div>
                     <div class="col-lg-12 col-md-12 col-xs-12 col-xl-12">
-                        <div class="thirdpage-title">TELEFONE</div>
+                        <div class="thirdpage-title">CELULAR</div>
                         <input type="tel" class="form-control" ng-model="buyerInfo.phone" />
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-xs-12 col-xl-12">
+                        <div class="thirdpage-title" style="text-transform:none">TROCO PARA QUANTO?<br /> <small>(Se for pagar em dinheiro)</small></div>
+                        <input type="number" class="form-control" ng-model="buyerInfo.change" />
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-xs-12 col-xl-12" style="margin-top:15px;margin-bottom:15px; text-align: center; color: #BF7E01">
@@ -45,16 +49,16 @@
             </div>
         </div>
     </div>
-    <div class="row" style="padding-top:10px; padding-bottom: 10px">
+    <div class="row" style="padding-bottom: 15px">
         <div class="thirdpage-infobox">
-            <div style="color: white; font-size: 16px;">O TEMPO ESTIMADO PARA SUA ENTREGA É DE ATÉ 30 MINUTOS.</div>
+            <div style="color: white; font-size: 16px;">O TOTAL DA SUA COMPRA É DE: <span class="textoAmarelo">{{strTotal}}</span><BR/><br/>O TEMPO ESTIMADO PARA SUA ENTREGA É DE ATÉ <span class="textoAmarelo">30 MINUTOS</span>.</div>
         </div>
     </div>
     <div class="row rowHeader noSideMargins">
         <div class="footer2" ng-click="previousStep()" style="cursor: pointer; background-color: #734200; width: 50%">
             <div class="bottomDiv1">                
                 <img src="img/bt_back.png" class="img img-responsive footer-img">
-                <span class="bottomThinLT">Ops, esqueci algo <br> <span class="bottomBoldYellow">VOLTAR</span></span>                
+                <span class="bottomThinLT">Conferir pedido <br> <span class="bottomBoldYellow">VOLTAR</span></span>                
             </div>
         </div>
         <div class="footer2" ng-click="Save()" style="cursor: pointer; width: 50%">

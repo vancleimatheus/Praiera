@@ -3,7 +3,7 @@ app.factory('productsService', ['$http', '$q', 'serviceBase',
     function ($http, $q, serviceBase) {
         var service = {};
         var internalCounter = 0;
-        var PRODUCT_CHUNK = 4;
+        var PRODUCT_CHUNK = 6;
         var _products = [];
 
         var _getProducts = function (sendMore) {

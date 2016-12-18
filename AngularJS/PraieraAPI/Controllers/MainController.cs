@@ -35,6 +35,37 @@ namespace PraieraAPI.Controllers
             return ret;
         }
 
+        [Route("setOffline")]
+        public bool SetOffline()
+        {
+            return setShopStatus(0);
+        }
+
+        [Route("setOnline")]
+        public bool SetOnline()
+        {
+            return setShopStatus(1);
+        }
+
+
+        private bool setShopStatus(int status)
+        {
+            var cnString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings[0].ConnectionString;
+
+            var cn = new SqlConnection(cnString);
+            cn.Open();
+
+            var cmd = cn.CreateCommand();
+
+            cmd.CommandText = "UPDATE Config SET isOnline = " + status.ToString();
+            cmd.ExecuteNonQuery();
+
+            cn.Close();
+
+            return true;
+
+        }
+
         public struct contactForm
         {
             public string name;

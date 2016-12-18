@@ -13,6 +13,7 @@ namespace PraieraAPI.Models
         public string comments { get; set; }
         public string name { get; set; }
         public string phone { get; set; }
+        public double change { get; set; }
         public DateTime date { get; set; }
     }
 }

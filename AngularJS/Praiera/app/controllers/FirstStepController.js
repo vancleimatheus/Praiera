@@ -138,7 +138,7 @@ app.controller('FirstStepController', ['$scope', '$location', '$filter', '$uibMo
                     $scope.showAlert('Por favor adicione mais itens. O pedido mínimo é de: ' + $filter('currency')(data.minimunPurchase, 'R$', 2));
                 }
             } else {
-                $scope.showAlert('Desculpe-nos, não estamos entregando no momento');
+                $scope.showAlert('Desculpe-nos, não estamos entregando no momento.');
             }
         }
 

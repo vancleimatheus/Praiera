@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="styles/375px.css" />
     <link rel="stylesheet" href="styles/360px.css" />
     <link rel="stylesheet" href="styles/320px.css" />
+    <link rel="stylesheet" href="styles/payment.css" />
 </head>
 <body>
     <div class="container-fluid" ng-controller="IndexController">

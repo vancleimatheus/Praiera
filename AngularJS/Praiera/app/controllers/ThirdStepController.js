@@ -8,16 +8,20 @@ app.controller('ThirdStepController', ['$scope', '$location', '$window', '$filte
             $scope.$apply();
         });
 
+        cartService.getProductsCart();
+        $scope.strTotal = $filter('currency')(cartService.getTotal(), 'R$', 2);
+
         $scope.buyerInfo = {
             longitude: 0.0,
             latitude: 0.0,
             comments: '',
             name: '',
-            phone: ''
+            phone: '',
+            change: 0
         }
 
         $scope.previousStep = function () {
-            $location.path('firststep');
+            $location.path('secondstep');
         }
 
         $scope.Save = function () {
@@ -94,16 +98,10 @@ app.directive('myMap', function () {
                     infoWindow.setContent('Você está aqui!');
                     map.setCenter(pos);
                 }, function (data) {
-                    if (data.PERMISSION_DENIED === 1) {
-                        $scope.showAlert('O acesso a sua localização não foi permitido, por favor limpe as configurações, atualize a página e clique em "Permitir" quando solicitado.');
-                    } else {
-                        $scope.showAlert('Infelizmente não conseguimos determinar a sua localização. <br/><br/> Sem problemas, pressione "FINALIZAR" e vamos entrar em contato pelo Whatsapp!');
-                    }
+                    $scope.showAlert('Infelizmente, não conseguimos detectar a sua localização. <br/><br/> Sem problemas, preencha seus dados, pressione "FINALIZAR" e entraremos em contato pelo Whatsapp!');
                 });
             } else {
-                // Browser doesn't support Geolocation
-                //handleLocationError(false, infoWindow, map.getCenter());
-                console.log('Deu erro!!!');
+                $scope.showAlert('Infelizmente, não conseguimos detectar a sua localização. <br/><br/> Sem problemas, preencha seus dados, pressione "FINALIZAR" e entraremos em contato pelo Whatsapp!');
             }
         }
 

@@ -36,12 +36,14 @@ namespace PraieraAPI.Controllers
         }
 
         [Route("setOffline")]
+        [HttpGet]
         public bool SetOffline()
         {
             return setShopStatus(0);
         }
 
         [Route("setOnline")]
+        [HttpGet]
         public bool SetOnline()
         {
             return setShopStatus(1);

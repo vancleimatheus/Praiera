@@ -78,4 +78,4 @@ app.config(function ($routeProvider) {
     $routeProvider.otherwise({ redirectTo: "/firststep" });
 });
 
-app.constant('serviceBase', { value: 'http://192.168.0.4:50974/' });
+app.constant('serviceBase', { value: 'http://localhost:50974/' });

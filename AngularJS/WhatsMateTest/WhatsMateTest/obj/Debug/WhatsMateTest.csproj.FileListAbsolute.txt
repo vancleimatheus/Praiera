@@ -1,0 +1,6 @@
+C:\Projetos\Praiera\AngularJS\WhatsMateTest\WhatsMateTest\bin\Debug\WhatsMateTest.exe.config
+C:\Projetos\Praiera\AngularJS\WhatsMateTest\WhatsMateTest\obj\Debug\WhatsMateTest.csprojResolveAssemblyReference.cache
+C:\Projetos\Praiera\AngularJS\WhatsMateTest\WhatsMateTest\bin\Debug\WhatsMateTest.exe
+C:\Projetos\Praiera\AngularJS\WhatsMateTest\WhatsMateTest\bin\Debug\WhatsMateTest.pdb
+C:\Projetos\Praiera\AngularJS\WhatsMateTest\WhatsMateTest\obj\Debug\WhatsMateTest.exe
+C:\Projetos\Praiera\AngularJS\WhatsMateTest\WhatsMateTest\obj\Debug\WhatsMateTest.pdb

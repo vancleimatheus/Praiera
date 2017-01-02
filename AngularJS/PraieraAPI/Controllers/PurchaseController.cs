@@ -75,8 +75,11 @@ namespace PraieraAPI.Controllers
 
                 Utils.Mail.sendMail(ConfigurationManager.AppSettings["purchaseEmail"], subject, body);
 
+                Utils.WaMessageSender msgSender = new Utils.WaMessageSender();
+                msgSender.sendMessage("+55 48 88226306", "Novo pedido solicitado. \nNome:" + purchase.name + "\nTelefone: " + purchase.phone);
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
